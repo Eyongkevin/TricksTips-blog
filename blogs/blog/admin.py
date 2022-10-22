@@ -14,6 +14,7 @@ class PostAdmin(admin.ModelAdmin):
         "get_minimized_body",
         "published_date",
         "status",
+        "get_tags",
     )
     list_filter = ("status", ("published_date", DateRangeFilter))
     search_fields = ("title", "body")
@@ -29,3 +30,7 @@ class PostAdmin(admin.ModelAdmin):
     @admin.display(description="Body")
     def get_minimized_body(self, obj):
         return get_minimized_text(obj.body, 60)
+
+    @admin.display(description="Tags")
+    def get_tags(self, obj):
+        return ", ".join([tag.name for tag in obj.tags.all()])
