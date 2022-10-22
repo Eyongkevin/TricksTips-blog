@@ -14,6 +14,8 @@ class PostAdmin(admin.ModelAdmin):
         "get_minimized_body",
         "published_date",
         "status",
+        "get_likes",
+        "get_dislikes",
         "get_tags",
     )
     list_filter = ("status", ("published_date", DateRangeFilter))
@@ -34,3 +36,11 @@ class PostAdmin(admin.ModelAdmin):
     @admin.display(description="Tags")
     def get_tags(self, obj):
         return ", ".join([tag.name for tag in obj.tags.all()])
+
+    @admin.display(description="Likes")
+    def get_likes(self, obj):
+        return obj.like_count
+
+    @admin.display(description="Dislikes")
+    def get_dislikes(self, obj):
+        return obj.dislike_count

@@ -2,8 +2,10 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
+from django.db.models import F
 from taggit.managers import TaggableManager
 from blogs.core.models import TimeStampedModel
+from blogs.like.models import Like
 
 # Create your models here.
 
@@ -72,3 +74,51 @@ class Post(TimeStampedModel):
 
     def __str__(self):
         return f"{self.title}"
+
+    @property
+    def like_count(self):
+        """return post's like count or zero if not exist"""
+
+        if self.likes.exists():
+            return self.likes.first().like_count
+        return 0
+
+    @property
+    def dislike_count(self):
+        """return post's dislike count or zero if not exist"""
+
+        if self.likes.exists():
+            return self.likes.first().dislike_count
+        return 0
+
+    def _create_or_update_likes(self, like=True):
+        """add like or dislike, or create Like for a post
+
+        Args:
+            like (bool, optional): determine if like or dislike. Defaults to True.
+        """
+
+        if like:
+            lookup = "like_count"
+        else:
+            lookup = "dislike_count"
+
+        if self.likes.exists():
+            lookup_filter = {lookup: F(lookup) + 1}
+            self.likes.all().update(**lookup_filter)
+        else:
+            Like.objects.create(
+                post=self,
+                like_count=int(like),
+                dislike_count=int(not like),
+            ).save()
+
+    def add_like(self):
+        """add like to a post"""
+
+        self._create_or_update_likes()
+
+    def add_dislike(self):
+        """add dislike to a post"""
+
+        self._create_or_update_likes(like=False)

@@ -1,13 +1,12 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from blogs.blog.models import Post
 from blogs.core.models import TimeStampedModel
 
 
 # Create your models here.
 class Like(TimeStampedModel):
     post = models.ForeignKey(
-        Post,
+        "blog.Post",
         verbose_name=_("Post likes and dislikes"),
         on_delete=models.CASCADE,
         related_name="likes",
