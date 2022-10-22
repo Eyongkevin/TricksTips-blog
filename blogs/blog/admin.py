@@ -1,4 +1,5 @@
 from django.contrib import admin
+from rangefilter.filters import DateRangeFilter
 from .models import Post
 from .utils import get_minimized_text
 
@@ -14,7 +15,7 @@ class PostAdmin(admin.ModelAdmin):
         "published_date",
         "status",
     )
-    list_filter = ("status", "published_date")
+    list_filter = ("status", ("published_date", DateRangeFilter))
     search_fields = ("title", "body")
     # TODO: 'prepopulated_fields' Do not work for updates
     prepopulated_fields = {"slug": ("title",)}

@@ -20,6 +20,7 @@ CREATED_APPS = [
 
 THIRD_PARTY_APPS = [
     # add third-party apps here
+    "rangefilter",
 ]
 
 INSTALLED_APPS = [*DEFAULT_APPS, *CREATED_APPS, *THIRD_PARTY_APPS]
