@@ -15,6 +15,7 @@ DEFAULT_APPS = [
 ]
 CREATED_APPS = [
     # add created apps here
+    "blogs.blog.apps.BlogConfig",
 ]
 
 THIRD_PARTY_APPS = [
@@ -22,16 +23,6 @@ THIRD_PARTY_APPS = [
 ]
 
 INSTALLED_APPS = [*DEFAULT_APPS, *CREATED_APPS, *THIRD_PARTY_APPS]
-
-
-INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
