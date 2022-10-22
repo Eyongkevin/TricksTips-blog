@@ -7,6 +7,24 @@ from blogs.core.models import TimeStampedModel
 # Create your models here.
 
 
+class PostManager(models.Manager):
+    """custom post manager"""
+
+
+class PostQuerySet(models.QuerySet):
+    """custom Post query set"""
+
+    def published(self, **kwargs):
+        """return all published posts"""
+
+        return self.filter(status="published", **kwargs)
+
+    def this_year_posts(self, **kwargs):
+        """return all post that was published this year."""
+
+        return self.filter(created_at__year=timezone.now().year, **kwargs)
+
+
 class Post(TimeStampedModel):
     """model for Post"""
 
@@ -41,6 +59,9 @@ class Post(TimeStampedModel):
         default=StatusChoices.PUBLISHED,
         db_index=True,
     )
+
+    objects = models.Manager()
+    post = PostManager.from_queryset(PostQuerySet)()
 
     class Meta:
         """set meta"""
