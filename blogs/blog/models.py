@@ -2,11 +2,12 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
+from blogs.core.models import TimeStampedModel
 
 # Create your models here.
 
 
-class Post(models.Model):
+class Post(TimeStampedModel):
     """model for Post"""
 
     class StatusChoices(models.TextChoices):
@@ -40,8 +41,6 @@ class Post(models.Model):
         default=StatusChoices.PUBLISHED,
         db_index=True,
     )
-    created_at = models.DateTimeField(_("Post Created Date"), auto_now_add=True)
-    updated_at = models.DateTimeField(_("Post Updated Date"), auto_now=True)
 
     class Meta:
         """set meta"""
