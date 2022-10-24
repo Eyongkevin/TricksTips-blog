@@ -29,3 +29,14 @@ def post_list(request, tag_slug=None):
 
     posts = pagination(request, object_list)
     return render(request, "blog/post_list.html", {"posts": posts, "tag": tag})
+
+
+def post_detail(request, year, month, day, post):
+    post = get_object_or_404(
+        Post,
+        slug=post,
+        published_date__year=year,
+        published_date__month=month,
+        published_date__day=day,
+    )
+    return render(request, "blog/post_detail.html", {"post": post})

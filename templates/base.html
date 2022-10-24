@@ -12,6 +12,8 @@
           <a href="/">Tricks&Tips</a>
           {% if tag %}>
           <span>{{tag.name}}</span>
+          {% endif %} {% if post %}>
+          <span>{{post.slug}}</span>
           {% endif %}
         </header>
         {% block content %} {% endblock %}
