@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}Tricks&Tips{% endblock%}
+
+<!---->
+{% block content %}
+<main class="item main-content">
+  <div class="post_lists">
+    {% for post in posts %}
+    <h2>
+      <a href="#"> {{ post.title}} </a>
+      <br />
+    </h2>
+    <p class="date">Published {{ post.published_date}} by {{ post.author}}</p>
+
+    <!--<p>Tags: {{ post.tags.all|join:', '}}</p> -->
+    {{ post.body|truncatewords:30|linebreaks}} {% endfor %}
+    <!-- ListView pass pagination pages as 'page_obj' but for a 
+         FBV, we will use the page object that was created-->
+    {% include "pagination.html" with page=posts %}
+  </div>
+</main>
+<aside class="item">Side</aside>
+{% endblock %}

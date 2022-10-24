@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
+from django.utils.functional import cached_property
 from django.db.models import F
 from taggit.managers import TaggableManager
 from blogs.core.models import TimeStampedModel
@@ -74,6 +76,18 @@ class Post(TimeStampedModel):
 
     def __str__(self):
         return f"{self.title}"
+
+    @cached_property
+    def get_absolute_url(self):
+        return reverse(
+            "blogs:post_detail",
+            args=[
+                self.published_date.year,
+                self.published_date.month,
+                self.published_date.day,
+                self.slug,
+            ],
+        )
 
     @classmethod
     def get_all_tags(cls):

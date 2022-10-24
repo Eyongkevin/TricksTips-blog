@@ -6,6 +6,17 @@
     <link href="{% static "css/main.css" %}" rel="stylesheet">
   </head>
   <body>
-    <div id="content">{% block content %} {% endblock %}</div>
+    <div id="content">
+      <div class="container">
+        <header class="item main-header">
+          <a href="/">Tricks&Tips</a>
+          {% if tag %}>
+          <span>{{tag.name}}</span>
+          {% endif %}
+        </header>
+        {% block content %} {% endblock %}
+        <footer class="item">Footer</footer>
+      </div>
+    </div>
   </body>
 </html>

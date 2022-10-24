@@ -1,14 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from taggit.models import Tag
+from .models import Post
+from .utils import search_filter, pagination
 
 # Create your views here.
 
 
 def index_view(request):
     # get all unique tags
-    all_tags = [tag.name for tag in Tag.objects.all()]
+    all_tags = Tag.objects.all()
 
     # get at least 10 hot posts(with highest likes)
     hot_posts = None
 
     return render(request, "blog/index.html", {"tags": all_tags, "posts": hot_posts})
+
+
+def post_list(request, tag_slug=None):
+    """get all posts by tag."""
+
+    object_list = Post.post.published()
+    object_list = search_filter(request, object_list)
+
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        object_list = object_list.filter(tags__in=[tag])
+
+    posts = pagination(request, object_list)
+    return render(request, "blog/post_list.html", {"posts": posts, "tag": tag})

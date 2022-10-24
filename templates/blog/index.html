@@ -6,19 +6,16 @@
 <!---->
 
 {% block content %}
-<div class="container">
-  <header class="item main-header">Tricks&Tips</header>
   <main class="item main-content">
     <div class="boxes">
-      {% for tag in tags %}
-      <div class="box">{{ tag }}</div>
+      {% for tag in tags %} 
+      <a class="box" href= {% url 'blogs:post_tag_view' tag.slug %}>
+            {{ tag.name }}
+      </a>
       {% empty %}
       <div class="no-posts">No Posts</div>
       {% endfor %}
     </div>
   </main>
   <aside class="item">Side</aside>
-  <footer class="item">Footer</footer>
-</div>
-
 {% endblock content %}

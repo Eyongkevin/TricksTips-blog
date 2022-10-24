@@ -17,3 +17,10 @@ def pagination(request, object_list, page_limit=2):
     except EmptyPage:
         results = paginator.page(paginator.num_pages)
     return results
+
+
+def search_filter(request, obj):
+    q = request.GET.get("q")
+    if q:
+        return obj.filter(title__icontains=q)
+    return obj

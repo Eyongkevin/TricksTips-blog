@@ -15,9 +15,6 @@ a {
     text-decoration:none;
 }
 
-a:hover {
-    color:#00a74f;
-}
 
 h1, h2, h3, h4, h5 , h6 { font-family: 'Muli', sans-serif; font-weight:normal; }
 
@@ -93,4 +90,13 @@ footer {
    color:#00a74f;
    margin-left: 1rem;
    border-radius:5%
+}
+.box:hover {
+   color:red;
+   font-size: xx-large;
+   background-color: #6b06b8;
+}
+.date{
+   font-size: small;
+   color:#bbb
 }
