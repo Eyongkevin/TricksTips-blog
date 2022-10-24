@@ -1,0 +1,96 @@
+@import url(//fonts.googleapis.com/css?family=Muli);
+
+body {
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif;
+}
+
+p {
+    line-height: 1.8;
+}
+
+a {
+    color:#12c064;
+    text-decoration:none;
+}
+
+a:hover {
+    color:#00a74f;
+}
+
+h1, h2, h3, h4, h5 , h6 { font-family: 'Muli', sans-serif; font-weight:normal; }
+
+h1 {
+    border-bottom:1px solid #bbb;
+    padding:0 0 10px 0;
+    margin:10px 0 20px 0;
+}
+
+h2 {
+    margin:30px 0 20px;
+}
+
+ol {
+    line-height:1.5;
+}
+
+.container { 
+   background-color: indigo; 
+   display: flex; 
+   flex-flow: row wrap;
+}
+.item {
+   display: flex;
+}
+
+header {
+   background-color: #105b63; 
+   min-height: 3rem;
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-weight: bold;
+   font-size: xx-large;
+   color:#bbb;
+   min-width: 100%;
+   position: fixed;
+   padding: 1rem;
+} 
+main {
+   background-color: #fffad5; 
+   color: #333;
+   flex: 1 0 auto;
+   min-height: 35rem;
+   padding: 6rem 1rem;
+} 
+aside {
+   background-color: #ffd34e; 
+   color: #222;
+   flex: 0 0 200px;
+}
+footer {
+   background-color: #bd4932; 
+   flex: 1 0 100%;
+   min-height: 10rem;
+   padding: 1rem;
+}
+.main-content{
+   display: flex;
+}
+.boxes{
+   display: flex;
+   flex-flow: row wrap;
+   width: 100%;
+}
+.box{
+   background-color: #34005b;
+   display: flex;
+   flex: 1 0 20%;
+   max-height: 15rem;
+   max-width: 15%;
+   align-items: center;
+   justify-content: center;
+   font-size: x-large;
+   color:#00a74f;
+   margin-left: 1rem;
+   border-radius:5%
+}

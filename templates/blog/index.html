@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+<!---->
+{% block title %}Tricks&Tips{% endblock title %}
+
+<!---->
+
+{% block content %}
+<div class="container">
+  <header class="item main-header">Tricks&Tips</header>
+  <main class="item main-content">
+    <div class="boxes">
+      {% for tag in tags %}
+      <div class="box">{{ tag }}</div>
+      {% empty %}
+      <div class="no-posts">No Posts</div>
+      {% endfor %}
+    </div>
+  </main>
+  <aside class="item">Side</aside>
+  <footer class="item">Footer</footer>
+</div>
+
+{% endblock content %}

@@ -75,6 +75,10 @@ class Post(TimeStampedModel):
     def __str__(self):
         return f"{self.title}"
 
+    @classmethod
+    def get_all_tags(cls):
+        return cls.tags.all()
+
     @property
     def like_count(self):
         """return post's like count or zero if not exist"""
