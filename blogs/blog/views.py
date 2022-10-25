@@ -22,7 +22,9 @@ def index_view(request):
 def post_list(request, tag_slug=None):
     """get all posts by tag."""
 
-    object_list = Post.post.published()
+    object_list = Post.post.published().order_by(
+        "-likes__like_count", "-published_date"
+    )
     object_list = search_filter(request, object_list)
     hot_posts = Like.like.most_liked_posts()
 
