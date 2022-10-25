@@ -17,5 +17,12 @@
       {% endfor %}
     </div>
   </main>
-  <aside class="item">Side</aside>
+  <aside class="item">
+   <h2>Hot Ticks&Tips</h2>
+   {% for hot_post in hot_posts %}
+      {% include "includes/hot_posts.html" with post=hot_post %}
+   {% empty%}
+   <div class="no-hot-posts">No Hot Posts</div>
+   {% endfor %}
+  </aside>
 {% endblock content %}

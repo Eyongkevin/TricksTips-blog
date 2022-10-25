@@ -1,0 +1,12 @@
+<div class="hot-item">
+  <a class="hot-title" href="{{post.post.get_absolute_url}}">
+    {{ post.post.title}}
+  </a>
+  <div class="hot-date">
+    Published {{ post.post.published_date}} by {{ post.post.author }}
+  </div>
+  <div class="hot-emotion">
+    <span class="hot-like">Helpful: {{post.like_count}}</span>
+    <span class="hot-dislike">Unhelpful: {{post.dislike_count}}</span>
+  </div>
+</div>
