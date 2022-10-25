@@ -7,7 +7,7 @@ urlpatterns = [
     path("", views.index_view, name="blogs_index"),
     path("tag/<slug:tag_slug>/", views.post_list, name="post_tag_view"),
     path(
-        "<int:year>/<int:month>/<int:day>/<slug:post>/",
+        "<slug:tag>/<int:year>/<int:month>/<int:day>/<slug:post>/",
         views.post_detail,
         name="post_detail",
     ),

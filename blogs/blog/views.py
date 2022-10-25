@@ -41,7 +41,7 @@ def post_list(request, tag_slug=None):
     )
 
 
-def post_detail(request, year, month, day, post):
+def post_detail(request, tag, year, month, day, post):
     post = get_object_or_404(
         Post,
         slug=post,
@@ -49,4 +49,5 @@ def post_detail(request, year, month, day, post):
         published_date__month=month,
         published_date__day=day,
     )
-    return render(request, "blog/post_detail.html", {"post": post})
+    tag = Tag.objects.filter(name=tag).first()
+    return render(request, "blog/post_detail.html", {"post": post, "tag": tag})

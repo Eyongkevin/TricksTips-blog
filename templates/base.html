@@ -20,7 +20,13 @@
         <header class="item main-header">
           <a href="/">Tricks&Tips</a>
           {% if tag %}>
-          <span>{{tag.name}}</span>
+            {% if post %}
+              <a href= {% url 'blogs:post_tag_view' tag.slug %}>
+                {{ tag.name }}
+              </a>
+            {% else %}
+              <span>{{tag.name}}</span>
+            {% endif %}
           {% endif %} {% if post %}>
           <span>{{post.slug}}</span>
           {% endif %}
