@@ -119,7 +119,7 @@ aside h2{
    font-size: x-small;
    color: #bbb;
 }
-.detail-body{
+/* .detail-body{
    display: flex;
    flex-flow: column wrap;
    min-height: auto;
@@ -128,7 +128,7 @@ aside h2{
 .post_detail{
    display: flex;
    flex-direction: column;
-}
+} */
 .feedback{
    display: flex;
    flex-direction: row;
@@ -157,4 +157,31 @@ aside h2{
    display: inline-flex;
    padding:0.7rem;
    color:gray
+}
+.detail-title{
+   color:#12c064;
+}
+pre {
+   background: #333;
+   white-space: pre;
+   word-wrap: break-word;
+   overflow: auto;
+}
+
+pre code {
+   font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+   display: block;
+   margin: 0 0 0 60px;
+   padding: 15px 16px 14px;
+   border-left: 1px solid #555;
+   overflow-x: auto;
+   font-size: 13px;
+   line-height: 19px;
+   color: #ddd;
+}
+code.language-javascript {
+   color: #ffa726;
+}
+code.language-python {
+   color: #4dd0e1;
 }

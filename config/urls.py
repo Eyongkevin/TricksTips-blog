@@ -20,4 +20,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("blogs.blog.urls", namespace="blogs")),
     path("unicorn/", include("django_unicorn.urls")),
+    path("ckeditor5/", include("django_ckeditor_5.urls")),
 ]

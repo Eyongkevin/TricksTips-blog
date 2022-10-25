@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.functional import cached_property
 from django.db.models import F
 from taggit.managers import TaggableManager
+from django_ckeditor_5.fields import CKEditor5Field
 from blogs.core.models import TimeStampedModel
 from blogs.like.models import Like
 
@@ -49,7 +50,7 @@ class Post(TimeStampedModel):
         on_delete=models.CASCADE,
         related_name="blog_posts",
     )
-    body = models.TextField(_("Post Body"))
+    body = CKEditor5Field("Body", config_name="extends")
     published_date = models.DateTimeField(
         _("Post Published Date"),
         default=timezone.now,

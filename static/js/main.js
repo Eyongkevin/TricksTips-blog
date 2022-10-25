@@ -8,4 +8,5 @@ $(function() {
       $('#button-like').removeClass('like-icon');
       $('#button-dislike').removeClass('dislike-icon');
    });
+   
 });
