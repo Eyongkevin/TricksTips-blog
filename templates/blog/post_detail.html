@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block title %}Tricks&Tips{% endblock%}
+{% extends "base.html" %} {% load static %}
+<!---->
+{% block title %}Tricks&Tips{% endblock%}
 
 <!---->
 {% block content %}
@@ -7,6 +9,16 @@
     <h2>{{ post.title }}</h2>
     <p class="date">Published {{ post.published_date}} by {{ post.author }}</p>
     <div class="detail-body">{{post.body|linebreaks}}</div>
+    <div class="feedback">
+      <span class="feedback-text">Did you find this helpful?</span>
+      <div id="button-like" class="like-icon">
+        <i class="fa fa-thumbs-up fa-2x"></i>
+      </div>
+      <span>&nbsp</span>
+      <div id="button-dislike" class="dislike-icon">
+        <i class="fa fa-thumbs-down fa-2x"></i>
+      </div>
+    </div>
   </div>
 </main>
 <aside class="item">Side</aside>

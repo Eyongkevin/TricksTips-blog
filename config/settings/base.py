@@ -23,6 +23,7 @@ THIRD_PARTY_APPS = [
     # add third-party apps here
     "rangefilter",
     "taggit",
+    "django_unicorn",
 ]
 
 INSTALLED_APPS = [*DEFAULT_APPS, *CREATED_APPS, *THIRD_PARTY_APPS]

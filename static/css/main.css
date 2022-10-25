@@ -125,3 +125,36 @@ aside h2{
    min-height: auto;
    line-height: 40rem;
 }
+.post_detail{
+   display: flex;
+   flex-direction: column;
+}
+.feedback{
+   display: flex;
+   flex-direction: row;
+   margin-top: 6%;
+   padding: 3rem 3rem;
+}
+.like-icon:hover{
+   color: #026c34;
+}
+.like-icon,
+.dislike-icon{
+   color:#12c064;
+}
+.dislike-icon:hover{
+   color: red;
+}
+#button-like{
+   display: inline-flex;
+   padding: 0 1rem;
+}
+#button-dislike{
+   display: inline-flex;
+   padding: 0 0.4rem;
+}
+.feedback-text{
+   display: inline-flex;
+   padding:0.7rem;
+   color:gray
+}
