@@ -6,7 +6,11 @@
     Published {{ post.post.published_date}} by {{ post.post.author }}
   </div>
   <div class="hot-emotion">
-    <span class="hot-like">Helpful: {{post.like_count}}</span>
-    <span class="hot-dislike">Unhelpful: {{post.dislike_count}}</span>
+    <span class="hot-like"
+      ><i class="fa fa-thumbs-up fa-lg"></i>: {{post.like_count}}</span
+    >
+    <span class="hot-dislike"
+      ><i class="fa fa-thumbs-down fa-lg"></i>: {{post.dislike_count}}</span
+    >
   </div>
 </div>
