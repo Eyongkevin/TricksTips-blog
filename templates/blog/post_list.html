@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block title %}Tricks&Tips{% endblock%}
+{% extends "base.html" %} {% load model_funcs %}
+<!---->
+{% block title %}Tricks&Tips{% endblock %}
 
 <!---->
 {% block content %}
@@ -6,7 +8,7 @@
   <div class="post_lists">
     {% for post in posts %}
     <h2>
-      <a href="{{post.get_absolute_url}}"> {{ post.title}} </a>
+      <a href="{{ post|get_absolute_url:tag.name }}"> {{ post.title}} </a>
       <br />
     </h2>
     <p class="date">Published {{ post.published_date}} by {{ post.author}}</p>

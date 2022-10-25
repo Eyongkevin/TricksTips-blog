@@ -78,11 +78,12 @@ class Post(TimeStampedModel):
     def __str__(self):
         return f"{self.title}"
 
-    @cached_property
-    def get_absolute_url(self):
+    # @cached_property
+    def get_absolute_url(self, tag):
         return reverse(
             "blogs:post_detail",
             args=[
+                tag,
                 self.published_date.year,
                 self.published_date.month,
                 self.published_date.day,
