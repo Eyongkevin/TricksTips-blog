@@ -23,6 +23,8 @@ def index_view(request):
 def post_list(request, cat_slug=None):
     """get all posts by cat."""
 
+    all_cats = Category.objects.all()
+
     object_list = Post.post.published().order_by(
         "-likes__like_count", "-published_date"
     )
@@ -39,11 +41,12 @@ def post_list(request, cat_slug=None):
     return render(
         request,
         "blog/post_list.html",
-        {"posts": posts, "cat": cat, "hot_posts": hot_posts},
+        {"posts": posts, "cat": cat, "cats": all_cats, "hot_posts": hot_posts},
     )
 
 
 def post_detail(request, cat_slug, year, month, day, post):
+    all_cats = Category.objects.all()
     post = get_object_or_404(
         Post,
         slug=post,
@@ -52,4 +55,6 @@ def post_detail(request, cat_slug, year, month, day, post):
         published_date__day=day,
     )
     cat = Category.objects.filter(slug=cat_slug).first()
-    return render(request, "blog/post_detail.html", {"post": post, "cat": cat})
+    return render(
+        request, "blog/post_detail.html", {"post": post, "cat": cat, "cats": all_cats}
+    )

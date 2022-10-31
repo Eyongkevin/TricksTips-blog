@@ -32,7 +32,9 @@
           {% endif %}
         </header>
         {% block content %} {% endblock %}
-        <footer class="item">Footer</footer>
+        <footer class="item">
+          {% include 'includes/footer.html' with cats=cats %}
+        </footer>
       </div>
     </div>
   </body>

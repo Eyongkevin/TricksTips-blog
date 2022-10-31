@@ -1,0 +1,29 @@
+<div class="footer">
+  <div class="footer-item footer-1">
+    <h3>About Tricks&Tips</h3>
+    <p>Tricks&Tips provides you with useful <b>Tricks</b> and <b>Tips</b></p>
+    <p>to help you up-to-date with the latest technologies.</p>
+    <p>All Tricks and Tips are simple, easy-to-follow and</p>
+    <p>practical.</p>
+  </div>
+  <div class="footer-item footer-2">
+    <h3>Categories</h3>
+    <ul>
+      {% for cat in cats %}
+      <li>
+        <a href="{% url 'blogs:post_cat_view' cat.slug %}">{{ cat.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="footer-item footer-3">
+    <h3>About Me</h3>
+    <p>Want to know more about me?</p>
+    <a
+      href="https://www.linkedin.com/in/eyong-enowanyo/"
+      target="_blank"
+      class="check-me"
+      >Check me out</a
+    >
+  </div>
+</div>

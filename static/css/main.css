@@ -193,3 +193,43 @@ code.language-javascript {
 code.language-python {
    color: #4dd0e1;
 }
+.footer{
+   display: flex;
+   min-width: 90%;
+   flex-flow: row wrap;
+   justify-content: space-between;
+}
+.footer-item h3{
+   color:red;
+}
+.footer-item{
+   display: flex;
+   flex-flow: column wrap;
+   max-width: 400px;
+   color: rgb(214, 206, 206)
+}
+.footer-item ul{
+   display: flex;
+   flex-flow: column wrap;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   max-height: 10rem;
+}
+.footer-item ul li{
+   margin: 10px 0;
+ }
+.check-me {
+   font-family: "Avenir Next", sans-serif;
+   font-weight: 900;
+   font-size: 30px;
+   background-image: linear-gradient(red, white, purple);
+   text-transform: uppercase;
+   color:#34005b;
+   font-style: italic;
+   letter-spacing: 0.05em;
+   display: inline-block;
+ }
+ .check-me:hover{
+   color:red;
+ }
