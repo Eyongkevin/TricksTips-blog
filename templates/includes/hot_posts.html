@@ -8,6 +8,8 @@
   </a>
   <div class="hot-date">
     Published {{ post.post.published_date}} by {{ post.post.author }}
+    <!---->
+    {% include "includes/tags.html" with tags=post.post.tags %}
   </div>
   <div class="hot-emotion">
     <span class="hot-like"

@@ -8,6 +8,8 @@
   <div class="post_detail">
     <h1 class="detail-title">{{ post.title }}</h1>
     <p class="date">Published {{ post.published_date}} by {{ post.author }}</p>
+    {% include "includes/tags.html" with tags=post.tags %}
+    <!---->
     {% include "includes/like_dislike.html" with post=post %}
     <div class="detail-body">{{post.body|safe|linebreaks}}</div>
     <div class="feedback">

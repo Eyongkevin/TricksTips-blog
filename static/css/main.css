@@ -111,7 +111,9 @@ footer {
 .hot-item{
    display: flex; 
    flex-direction: column;
-   padding: 0.3rem 0;
+   padding: 0.3rem 0.3rem;
+   margin-bottom: 0.2rem;
+   background-color: rgb(88, 4, 148);
 }
 .hot-dislike i {
    color: red;
@@ -233,3 +235,7 @@ code.language-python {
  .check-me:hover{
    color:red;
  }
+ .tag{
+   font-size: x-small;
+   color: #bbb;
+}
