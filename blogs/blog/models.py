@@ -65,6 +65,14 @@ class Post(TimeStampedModel):
         default=StatusChoices.PUBLISHED,
         db_index=True,
     )
+    category = models.ForeignKey(
+        "category.Category",
+        verbose_name=_("Post Category"),
+        on_delete=models.SET_NULL,
+        related_name="category_posts",
+        null=True,
+        blank=True,
+    )
 
     objects = models.Manager()
     post = PostManager.from_queryset(PostQuerySet)()

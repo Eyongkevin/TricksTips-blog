@@ -8,7 +8,7 @@
   <div class="post_lists">
     {% for post in posts %}
     <h2>
-      <a href="{{ post|get_absolute_url:tag.name }}"> {{ post.title}} </a>
+      <a href="{{ post|get_absolute_url:cat.slug }}"> {{ post.title}} </a>
       <br />
     </h2>
     <p class="date">Published {{ post.published_date}} by {{ post.author}}</p>

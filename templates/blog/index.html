@@ -8,9 +8,9 @@
 {% block content %}
   <main class="item main-content">
     <div class="boxes">
-      {% for tag in tags %} 
-      <a class="box" href= {% url 'blogs:post_tag_view' tag.slug %}>
-            {{ tag.name }}
+      {% for cat in cats %} 
+      <a class="box" href= {% url 'blogs:post_cat_view' cat.slug %}>
+            {{ cat.name }}
       </a>
       {% empty %}
       <div class="no-posts">No Posts</div>

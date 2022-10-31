@@ -12,6 +12,7 @@ class PostAdmin(admin.ModelAdmin):
         "title",
         "get_username",
         "get_minimized_body",
+        "category",
         "published_date",
         "status",
         "get_likes",

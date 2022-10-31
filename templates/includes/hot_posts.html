@@ -1,5 +1,9 @@
+{% load model_funcs %}
 <div class="hot-item">
-  <a class="hot-title" href="{{post.post.get_absolute_url}}">
+  <a
+    class="hot-title"
+    href="{{post.post|get_absolute_url:post.post.category.slug}}"
+  >
     {{ post.post.title}}
   </a>
   <div class="hot-date">

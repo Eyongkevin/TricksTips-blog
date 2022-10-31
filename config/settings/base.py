@@ -17,6 +17,7 @@ CREATED_APPS = [
     # add created apps here
     "blogs.blog.apps.BlogConfig",
     "blogs.like.apps.LikeConfig",
+    "blogs.category.apps.CategoryConfig",
 ]
 
 THIRD_PARTY_APPS = [
