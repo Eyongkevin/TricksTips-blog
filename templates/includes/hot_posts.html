@@ -1,4 +1,4 @@
-{% load model_funcs %}
+{% load model_funcs %} {% load core_tags %}
 <div class="hot-item">
   <a
     class="hot-title"
@@ -7,7 +7,7 @@
     {{ post.post.title}}
   </a>
   <div class="hot-date">
-    Published {{ post.post.published_date}} by {{ post.post.author }}
+    Published {{ post.post.published_date|date_since}} by {{ post.post.author }}
     <!---->
     {% include "includes/tags.html" with tags=post.post.tags %}
   </div>

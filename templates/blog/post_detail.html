@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load static %}
+{% extends "base.html" %} {% load static %} {% load core_tags %}
 <!---->
 {% block title %}Tricks&Tips{% endblock%}
 
@@ -7,7 +7,9 @@
 <main class="item main-content">
   <div class="post_detail">
     <h1 class="detail-title">{{ post.title }}</h1>
-    <p class="date">Published {{ post.published_date}} by {{ post.author }}</p>
+    <p class="date">
+      Published {{ post.published_date|date_since}} by {{ post.author }}
+    </p>
     {% include "includes/tags.html" with tags=post.tags %}
     <!---->
     {% include "includes/like_dislike.html" with post=post %}
