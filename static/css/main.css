@@ -239,3 +239,6 @@ code.language-python {
    font-size: x-small;
    color: #bbb;
 }
+.tag-span{
+   font-weight: bolder;
+}
