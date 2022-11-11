@@ -19,7 +19,7 @@
     {% include "includes/like_dislike.html" with post=post %}
 
     <!--<p>Tags: {{ post.tags.all|join:', '}}</p> -->
-    {{ post.body|safe|truncatewords:10|linebreaks}} {% endfor %}
+    {{ post.body|safe|truncatewords_html:30|linebreaks}} {% endfor %}
     <!-- ListView pass pagination pages as 'page_obj' but for a 
          FBV, we will use the page object that was created-->
     {% include "pagination.html" with page=posts %}
