@@ -1,0 +1,19 @@
+{% load model_funcs %} {% load core_tags %}
+<div class="hot-item">
+  <a class="hot-title" href="{{post|get_absolute_url:post.category.slug}}">
+    {{ post.title}}
+  </a>
+  <div class="hot-date">
+    Published {{ post.published_date|date_since}} by {{ post.author }}
+    <!---->
+    {% include "includes/tags.html" with tags=post.tags %}
+  </div>
+  <div class="hot-emotion">
+    <span class="hot-like"
+      ><i class="fa fa-thumbs-up fa-lg"></i>: {{post.like_count}}</span
+    >
+    <span class="hot-dislike">
+      <i class="fa fa-thumbs-down fa-lg"></i>: {{post.dislike_count}}</span
+    >
+  </div>
+</div>

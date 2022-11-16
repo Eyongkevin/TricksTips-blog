@@ -55,6 +55,24 @@ def post_detail(request, cat_slug, year, month, day, post):
         published_date__day=day,
     )
     cat = Category.objects.filter(slug=cat_slug).first()
+    tag_slugs = [tag.slug for tag in post.tags.all()]
+    related_posts = (
+        Post.post.published()
+        .filter(
+            tags__slug__in=tag_slugs,
+        )
+        .exclude(id=post.id)
+        .order_by("-likes__like_count")[:5]
+    )
+    hot_posts = Like.like.most_liked_posts()
     return render(
-        request, "blog/post_detail.html", {"post": post, "cat": cat, "cats": all_cats}
+        request,
+        "blog/post_detail.html",
+        {
+            "post": post,
+            "cat": cat,
+            "cats": all_cats,
+            "related_posts": related_posts,
+            "hot_posts": hot_posts,
+        },
     )
