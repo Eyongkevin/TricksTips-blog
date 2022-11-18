@@ -1,5 +1,7 @@
 from pathlib import Path
 
+SITE_ID = 1
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Application definition

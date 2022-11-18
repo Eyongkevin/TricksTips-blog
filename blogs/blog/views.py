@@ -1,52 +1,73 @@
 from django.shortcuts import render, get_object_or_404
-from taggit.models import Tag
+
 from .models import Post
 from blogs.like.models import Like
 from blogs.category.models import Category
-from .utils import search_filter, pagination
+from .utils import pagination, full_text_search, redirect_if_search
+from .form import SearchForm
 
 # Create your views here.
 
 
-def index_view(request):
+@redirect_if_search
+def index_view(request, **kwargs):
     # get all categories
     all_cats = Category.objects.all()
-
     # get at least 10 hot posts(with highest likes)
     hot_posts = Like.like.most_liked_posts()
-
+    form = SearchForm()
     return render(
-        request, "blog/index.html", {"cats": all_cats, "hot_posts": hot_posts}
+        request,
+        "blog/index.html",
+        {"cats": all_cats, "hot_posts": hot_posts, "form": form},
     )
 
 
-def post_list(request, cat_slug=None):
+@redirect_if_search
+def post_list(request, **kwargs):
     """get all posts by cat."""
 
     all_cats = Category.objects.all()
+    form = SearchForm()
+    cat_slug = kwargs.get("cat_slug")
 
     object_list = Post.post.published().order_by(
         "-likes__like_count", "-published_date"
     )
-    object_list = search_filter(request, object_list)
     hot_posts = Like.like.most_liked_posts()
 
     cat = None
-    if cat_slug:
+    if cat_slug and cat_slug != "search":
         cat = get_object_or_404(Category, slug=cat_slug)
         object_list = object_list.filter(category__in=[cat])
+    if cat_slug == "search" or "query" in request.GET:
+        object_list, q = full_text_search(request, object_list)
+        cat = {"slug": f"{cat_slug if cat_slug else 'search'}={q}"}
 
     posts = pagination(request, object_list)
 
     return render(
         request,
         "blog/post_list.html",
-        {"posts": posts, "cat": cat, "cats": all_cats, "hot_posts": hot_posts},
+        {
+            "posts": posts,
+            "cat": cat,
+            "cats": all_cats,
+            "hot_posts": hot_posts,
+            "form": form,
+        },
     )
 
 
-def post_detail(request, cat_slug, year, month, day, post):
+@redirect_if_search
+def post_detail(request, **kwargs):
+    cat_slug = kwargs.get("cat_slug")
+    year = kwargs.get("year")
+    month = kwargs.get("month")
+    day = kwargs.get("day")
+    post = kwargs.get("post")
     all_cats = Category.objects.all()
+    form = SearchForm()
     post = get_object_or_404(
         Post,
         slug=post,
@@ -62,7 +83,7 @@ def post_detail(request, cat_slug, year, month, day, post):
             tags__slug__in=tag_slugs,
         )
         .exclude(id=post.id)
-        .order_by("-likes__like_count")[:5]
+        .order_by("likes__like_count")[:5]
     )
     hot_posts = Like.like.most_liked_posts()
     return render(
@@ -74,5 +95,6 @@ def post_detail(request, cat_slug, year, month, day, post):
             "cats": all_cats,
             "related_posts": related_posts,
             "hot_posts": hot_posts,
+            "form": form,
         },
     )

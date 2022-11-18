@@ -5,8 +5,9 @@
   <head>
     {% unicorn_scripts %}
     <title>{% block title %}{% endblock%}</title>
-    <link href="{% static "css/main.css" %}" rel="stylesheet">
+    <link type="text/css" href="{% static "css/main.css" %}" rel="stylesheet">
     <link
+      type="text/css"
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
@@ -18,18 +19,26 @@
     <div id="content">
       <div class="container">
         <header class="item main-header">
-          <a href="/">Tricks&Tips</a>
-          {% if cat %}>
-            {% if post %}
-              <a href= {% url 'blogs:post_cat_view' cat.slug %}>
-                {{ cat.slug }}
-              </a>
-            {% else %}
-              <span>{{cat.slug}}</span>
+          <div class="item-head">
+            <a href="/">Tricks&Tips</a>
+            {% if cat %}>
+              {% if post %}
+                <a href= {% url 'blogs:post_cat_view' cat.slug %}>
+                  {{ cat.slug }}
+                </a>
+              {% else %}
+                <span>{{cat.slug}}</span>
+              {% endif %}
+            {% endif %} {% if post %}>
+            <span>{{post.slug}}</span>
             {% endif %}
-          {% endif %} {% if post %}>
-          <span>{{post.slug}}</span>
-          {% endif %}
+          </div>
+          <div class="item-search">
+            <form method="get">
+              {{form.as_table }}
+              <input type="submit" value="Search">
+           </form>
+          </div>
         </header>
         {% block content %} {% endblock %}
         <footer class="item">

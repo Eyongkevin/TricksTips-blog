@@ -1,4 +1,10 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.contrib.postgres.search import TrigramSimilarity
+from django.db.models.functions import Greatest
+from django.shortcuts import redirect
+from django.urls import reverse
+from blogs.blog.form import SearchForm
+from functools import wraps
 
 
 def get_minimized_text(text, length=30):
@@ -19,8 +25,35 @@ def pagination(request, object_list, page_limit=2):
     return results
 
 
-def search_filter(request, obj):
-    q = request.GET.get("q")
+def full_text_search(request, obj):
+    q = request.GET.get("query")
     if q:
-        return obj.filter(title__icontains=q)
-    return obj
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data["query"]
+            obj = (
+                obj.annotate(
+                    similarity=Greatest(
+                        TrigramSimilarity("title", query),
+                        TrigramSimilarity("body", query),
+                    )
+                )
+                .filter(similarity__gte=0.05)
+                .order_by("-similarity")
+            )
+    return obj, q
+
+
+def redirect_if_search(func):
+    @wraps(func)
+    def wrapper(request, **kwargs):
+        cat_slug = kwargs.get("cat_slug")
+        if "query" in request.GET and cat_slug != "search":
+            query = request.GET.get("query")
+            return redirect(
+                f'{reverse("blogs:post_cat_view", kwargs={"cat_slug": "search"})}?query={query}'
+            )
+        else:
+            return func(request, **kwargs)
+
+    return wrapper

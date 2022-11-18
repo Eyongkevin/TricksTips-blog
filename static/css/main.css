@@ -43,8 +43,12 @@ ol {
 .item {
    display: flex;
 }
+.trickstips {
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 header {
+   display: flex;
    background-color: #105b63; 
    min-height: 3rem;
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -55,6 +59,17 @@ header {
    position: fixed;
    padding: 1rem;
 } 
+.main-header{
+   display: flex;
+   flex-flow: row wrap;
+   max-width: 100%;
+   background-color: red;
+}
+.item-search{
+   margin-left: auto;
+   padding-right: 23px;
+
+}
 main {
    background-color: #fffad5; 
    color: #333;
