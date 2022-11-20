@@ -20,18 +20,20 @@
       <div class="container">
         <header class="item main-header">
           <div class="item-head">
-            <a href="/">Tricks&Tips</a>
-            {% if cat %}>
-              {% if post %}
-                <a href= {% url 'blogs:post_cat_view' cat.slug %}>
-                  {{ cat.slug }}
-                </a>
-              {% else %}
-                <span>{{cat.slug}}</span>
+            <a href="/">TT Tricks&Tips</a>
+            <span class="item-head-tree">
+              {% if cat %}>
+                {% if post %}
+                  <a href= {% url 'blogs:post_cat_view' cat.slug %}>
+                    {{ cat.slug }}
+                  </a>
+                {% else %}
+                  <span>{{cat.slug}}</span>
+                {% endif %}
+              {% endif %} {% if post %}>
+              <span>{{post.slug}}</span>
               {% endif %}
-            {% endif %} {% if post %}>
-            <span>{{post.slug}}</span>
-            {% endif %}
+            </span>
           </div>
           <div class="item-search">
             <form method="get">

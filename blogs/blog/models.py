@@ -126,6 +126,7 @@ class Post(TimeStampedModel):
             like (bool, optional): determine if like or dislike. Defaults to True.
         """
 
+        # lookup = 'like_count' if like else 'dislike_count'
         if like:
             lookup = "like_count"
         else:

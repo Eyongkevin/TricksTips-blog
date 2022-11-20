@@ -6,13 +6,16 @@
 {% block content %}
 <main class="item main-content">
   <div class="post_detail">
-    <h1 class="detail-title">{{ post.title }}</h1>
-    <p class="date">
-      Published {{ post.published_date|date_since}} by {{ post.author }}
-    </p>
-    {% include "includes/tags.html" with tags=post.tags %}
-    <!---->
-    {% include "includes/like_dislike.html" with post=post %}
+    <h2 class="detail-title">{{ post.title }}</h2>
+    <div class="post-info">
+      <span class="date">
+        Published {{ post.published_date|date_since}} by {{ post.author }}
+      </span>
+      , {% include "includes/tags.html" with tags=post.tags %},
+      <!---->
+      {% include "includes/like_dislike.html" with post=post %}
+    </div>
+    <hr />
     <div class="detail-body">{{post.body|safe|linebreaks}}</div>
     <div class="feedback">
       <span class="feedback-text">Did you find this helpful?</span>
@@ -27,21 +30,27 @@
   </div>
 </main>
 <aside class="item">
-  <h2>Related Ticks&Tips</h2>
-  {% for post in related_posts %}
-  <!---->
-  {% include "includes/related_posts.html" with post=post %}
-  <!---->
-  {% empty%}
-  <div class="no-hot-posts">No Related Posts</div>
-  {% endfor %}
-  <h2>Hot <span class="trickstips">Ticks&Tips</span></h2>
-  {% for hot_post in hot_posts %}
-  <!---->
-  {% include "includes/hot_posts.html" with post=hot_post %}
-  <!---->
-  {% empty%}
-  <div class="no-hot-posts">No Hot Posts</div>
-  {% endfor %}
+  <div class="aside-item">
+    <h2>Related Ticks&Tips</h2>
+    <hr />
+    {% for post in related_posts %}
+    <!---->
+    {% include "includes/related_posts.html" with post=post %}
+    <!---->
+    {% empty%}
+    <div class="no-hot-posts">No Related Posts</div>
+    {% endfor %}
+  </div>
+  <div class="aside-item">
+    <h2>Hot <span class="trickstips">Ticks&Tips</span></h2>
+    <hr />
+    {% for hot_post in hot_posts %}
+    <!---->
+    {% include "includes/hot_posts.html" with post=hot_post %}
+    <!---->
+    {% empty%}
+    <div class="no-hot-posts">No Hot Posts</div>
+    {% endfor %}
+  </div>
 </aside>
 {% endblock %}

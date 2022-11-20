@@ -20,14 +20,14 @@ hr {
 
 h1, h2, h3, h4, h5 , h6 { font-family: 'Muli', sans-serif; font-weight:normal; }
 
-h1 {
+/* h1 {
     border-bottom:1px solid #bbb;
     padding:0 0 10px 0;
     margin:10px 0 20px 0;
-}
+} */
 
 h2 {
-    margin:30px 0 20px;
+    margin:20px 0 10px;
 }
 
 ol {
@@ -35,7 +35,6 @@ ol {
 }
 
 .container { 
-   background-color: indigo; 
    display: flex; 
    width: 100%;
    flex-flow: row wrap;
@@ -50,7 +49,7 @@ ol {
 header {
    display: flex;
    background-color: #105b63; 
-   min-height: 3rem;
+   max-height: 1.62rem;
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    font-weight: bold;
    font-size: xx-large;
@@ -63,31 +62,46 @@ header {
    display: flex;
    flex-flow: row wrap;
    max-width: 100%;
-   background-color: red;
+   background-color: white;
+   border-bottom: 0.1px solid grey;
+   
+}
+.item-head-tree {
+   font-size: small;
 }
 .item-search{
    margin-left: auto;
-   padding-right: 23px;
+   width: 35.54%;
+   /* padding-right: 240px; */
 
 }
+.search-input{
+   width: 77%;
+   height: 30px;
+   border: 0.1px solid grey;
+   border-radius: 1%;
+   font-size: small;
+}
 main {
-   background-color: #fffad5; 
+   background-color: white; 
    color: #333;
    flex: 1 0 auto ;
    width: 58.67%;
    min-height: 35rem;
-   padding: 6rem 1rem;
-   border: 6px solid rebeccapurple;
+   padding: 5rem 1rem;
+   border: 0.1px solid grey;
 } 
 aside { 
    color: #222;
+   background-color: white; 
    flex: 0 0 auto;
    width:31.67%;
+   font-size: smaller;
    flex-direction: column;
-   padding: 6rem 1rem;
+   padding: 5rem 1rem;
 }
 footer {
-   background-color: #34005b; 
+   background-color: rgb(32, 30, 30); 
    flex: 1 0 100%;
    min-height: 10rem;
    padding: 1rem;
@@ -100,9 +114,11 @@ footer {
 .box{
    background-color: #34005b;
    display: flex;
+   flex-flow: row wrap;
    flex: 1 0 20%;
    max-height: 15rem;
-   max-width: 15%;
+   min-width: 30%;
+   max-width: 30%;
    align-items: center;
    justify-content: center;
    font-size: x-large;
@@ -117,18 +133,21 @@ footer {
 }
 .date{
    font-size: small;
-   color:#bbb;
 }
 .hot-date {
    font-size: small;
-   color:#fffad5;
 }
 .hot-item{
    display: flex; 
    flex-direction: column;
    padding: 0.3rem 0.3rem;
-   margin-bottom: 0.2rem;
-   background-color: rgb(88, 4, 148);
+   margin-bottom: 0.05rem;
+}
+.aside-item{
+   border-radius: 1%;
+   border: 0.1px solid #e3dfbf;
+   background-color: #fffad5;
+   margin-bottom: 1rem;
 }
 .hot-dislike i {
    color: red;
@@ -154,6 +173,10 @@ aside h2{
    display: flex;
    flex-direction: column;
 } */
+.post-info {
+   display: flex;
+   flex-flow: row wrap;
+}
 .feedback{
    display: flex;
    flex-direction: row;
@@ -184,7 +207,7 @@ aside h2{
    color:gray
 }
 .detail-title{
-   color:indigo;
+   
 }
 pre {
    background: #333;
@@ -217,13 +240,13 @@ code.language-python {
    justify-content: space-between;
 }
 .footer-item h3{
-   color:red;
+   color:white;
 }
 .footer-item{
    display: flex;
    flex-flow: column wrap;
    max-width: 400px;
-   color: rgb(214, 206, 206)
+   color: rgb(185, 181, 181)
 }
 .footer-item ul{
    display: flex;
@@ -240,9 +263,9 @@ code.language-python {
    font-family: "Avenir Next", sans-serif;
    font-weight: 900;
    font-size: 30px;
-   background-image: linear-gradient(red, white, purple);
+   background-image: linear-gradient(red, white, rgb(32, 30, 30));
    text-transform: uppercase;
-   color:#34005b;
+   color:#12c064;
    font-style: italic;
    letter-spacing: 0.05em;
    display: inline-block;
@@ -251,8 +274,8 @@ code.language-python {
    color:red;
  }
  .tag{
-   font-size: x-small;
-   color: #bbb;
+   font-size: small;
+   margin-left: 2px;
 }
 .tag-span{
    font-weight: bolder;
