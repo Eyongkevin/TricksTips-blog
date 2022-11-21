@@ -9,7 +9,8 @@
     <h2 class="detail-title">{{ post.title }}</h2>
     <div class="post-info">
       <span class="date">
-        Published {{ post.published_date|date_since}} by {{ post.author }}
+        <span class="info-title">Published</span>
+        {{ post.published_date|date_since}} by {{ post.author }}
       </span>
       , {% include "includes/tags.html" with tags=post.tags %},
       <!---->

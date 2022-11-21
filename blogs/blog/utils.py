@@ -13,7 +13,7 @@ def get_minimized_text(text, length=30):
     return text[:length] + "..."
 
 
-def pagination(request, object_list, page_limit=2):
+def pagination(request, object_list, page_limit=10):
     paginator = Paginator(object_list, page_limit)
     page = request.GET.get("page")
     try:

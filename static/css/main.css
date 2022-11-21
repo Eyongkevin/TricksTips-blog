@@ -69,9 +69,12 @@ header {
 .item-head-tree {
    font-size: small;
 }
+.item-head-text {
+   font-size: large;
+}
 .item-search{
    margin-left: auto;
-   width: 35.54%;
+   width: 35.50%;
    /* padding-right: 240px; */
 
 }
@@ -85,9 +88,10 @@ header {
 main {
    background-color: white; 
    color: #333;
-   flex: 1 0 auto ;
+   flex: 1 1 auto ;
    width: 58.67%;
    min-height: 35rem;
+   max-height: 50rem;
    padding: 5rem 1rem;
    border: 0.1px solid grey;
 } 
@@ -110,6 +114,7 @@ footer {
    display: flex;
    flex-flow: row wrap;
    width: 100%;
+   height: 100%;
 }
 .box{
    background-color: #34005b;
@@ -124,6 +129,7 @@ footer {
    font-size: x-large;
    color:#00a74f;
    margin-left: 1rem;
+   margin-bottom: 1rem;
    border-radius:5%
 }
 .box:hover {
@@ -132,16 +138,17 @@ footer {
    background-color: #6b06b8;
 }
 .date{
-   font-size: small;
+   font-size: x-small;
 }
 .hot-date {
-   font-size: small;
+   font-size: x-small;
 }
 .hot-item{
    display: flex; 
    flex-direction: column;
    padding: 0.3rem 0.3rem;
    margin-bottom: 0.05rem;
+   font-size: x-small;
 }
 .aside-item{
    border-radius: 1%;
@@ -160,8 +167,9 @@ aside h2{
    color:red;
 }
 .hot-emotion{
-   font-size: x-small;
+   font-size: xx-small;
    color: #bbb;
+   margin-left: 2px;
 }
 /* .detail-body{
    display: flex;
@@ -176,6 +184,7 @@ aside h2{
 .post-info {
    display: flex;
    flex-flow: row wrap;
+   font-size: x-small;
 }
 .feedback{
    display: flex;
@@ -246,7 +255,8 @@ code.language-python {
    display: flex;
    flex-flow: column wrap;
    max-width: 400px;
-   color: rgb(185, 181, 181)
+   color: rgb(185, 181, 181);
+   font-size: small;
 }
 .footer-item ul{
    display: flex;
@@ -257,7 +267,7 @@ code.language-python {
    max-height: 10rem;
 }
 .footer-item ul li{
-   margin: 10px 0;
+   margin: 10px 3px;
  }
 .check-me {
    font-family: "Avenir Next", sans-serif;
@@ -265,7 +275,7 @@ code.language-python {
    font-size: 30px;
    background-image: linear-gradient(red, white, rgb(32, 30, 30));
    text-transform: uppercase;
-   color:#12c064;
+   color:#03602f;
    font-style: italic;
    letter-spacing: 0.05em;
    display: inline-block;
@@ -274,9 +284,27 @@ code.language-python {
    color:red;
  }
  .tag{
-   font-size: small;
+   font-size: x-small;
    margin-left: 2px;
 }
-.tag-span{
+.info-title{
    font-weight: bolder;
+}
+.post-lists{
+   width:100%;
+}
+.post-item {
+   background-color: rgb(251, 251, 251);
+   margin-bottom: 0.1rem;
+   width: 100%;
+   padding-left:5px;
+   padding-bottom: 0.2rem;
+   padding-top: 0.2rem;
+   font-size: x-small;
+}
+.pagination {
+   position: absolute;
+   bottom: -20px;
+   left: 340px;
+   font-size: small;
 }

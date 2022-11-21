@@ -5,26 +5,29 @@
 <!---->
 {% block content %}
 <main class="item main-content">
-  <div class="post_lists">
-    {% if query %}
-    <h1>Posts containing: "{{ query }}"</h1>
-    {% endif %} {% for post in posts %}
-    <h2>
-      <a href="{{ post|get_absolute_url:post.category.slug }}">
-        {{ post.title}}
-      </a>
-      <br />
-    </h2>
-    <div class="post-info">
-      <span class="date">
-        Published {{ post.published_date|date_since}} by {{ post.author}}
-      </span>
-      , {% include "includes/tags.html" with tags=post.tags %},
-      <!---->
-      {% include "includes/like_dislike.html" with post=post %}
+  <div class="post-lists">
+    {% for post in posts %}
+    <div class="post-item">
+      <h3>
+        <a href="{{ post|get_absolute_url:post.category.slug }}">
+          {{ post.title}}
+        </a>
+        <br />
+      </h3>
+      <div class="post-info">
+        <span class="date">
+          <span class="info-title">Published</span>
+          {{ post.published_date|date_since}} by {{ post.author}}
+        </span>
+        , {% include "includes/tags.html" with tags=post.tags %},
+        <!---->
+        {% include "includes/like_dislike.html" with post=post %}
+      </div>
+      <!--<p>Tags: {{ post.tags.all|join:', '}}</p> -->
+      {{ post.body|safe|truncatewords_html:30|linebreaks}}
     </div>
-    <!--<p>Tags: {{ post.tags.all|join:', '}}</p> -->
-    {{ post.body|safe|truncatewords_html:30|linebreaks}} {% endfor %}
+    {% endfor %}
+
     <!-- ListView pass pagination pages as 'page_obj' but for a 
          FBV, we will use the page object that was created-->
     {% include "pagination.html" with page=posts %}

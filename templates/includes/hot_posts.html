@@ -7,7 +7,8 @@
     {{ post.post.title}}
   </a>
   <div class="hot-date">
-    Published {{ post.post.published_date|date_since}} by {{ post.post.author }}
+    <span class="info-title">Published</span>
+    {{ post.post.published_date|date_since}} by {{ post.post.author }},
     <!---->
     {% include "includes/tags.html" with tags=post.post.tags %}
   </div>
