@@ -13,9 +13,9 @@ DAYS_PER_WEEK = 7
 
 @register.filter(is_safe=True)
 def date_since(specific_date):
-    today = timezone.now().date()
-    if isinstance(specific_date, datetime):
-        specific_date = specific_date.date()
+    today = timezone.now()
+    # if isinstance(specific_date, datetime):
+    #     specific_date = specific_date.date()
     diff = today - specific_date
     diff_years = int(diff.days / DAYS_PER_YEAR)
     diff_months = int(diff.days / DAYS_PER_MONTH)
@@ -34,15 +34,17 @@ def date_since(specific_date):
             return _("yesterday") if interval == "day" else _(f"last {interval}")
     if diff.days == 0:
         seconds = diff.seconds
-        minutes = seconds // 60 if seconds >= 60 else None
-        hour = minutes // 60 if minutes >= 60 else None
+        minutes = seconds // 60 if seconds and seconds >= 60 else None
+        hour = minutes // 60 if minutes and minutes >= 60 else None
 
         if not minutes:
             return _(f"{seconds} secs ago")
         if not hour:
-            return _(f"{minutes} mins ago")
+            return _(
+                f"{minutes if minutes > 1 else 'a'} min{'s' if minutes > 1 else ''} ago"
+            )
 
-        return _(f"{hour} hrs ago")
+        return _(f"{hour if hour > 1 else 'an'} hr{'s' if hour > 1 else ''} ago")
 
     else:
         return f"{specific_date: %B %d, %Y}"

@@ -11,7 +11,7 @@ p {
 }
 
 a {
-    color:#12c064;
+    color:#1292c0;
     text-decoration:none;
 }
 hr {
@@ -76,8 +76,11 @@ header {
    margin-left: auto;
    width: 35.50%;
    /* padding-right: 240px; */
-
 }
+/* .item-search form {
+   color: #555;
+   border-radius: 5px;
+} */
 .search-input{
    width: 77%;
    height: 30px;
@@ -85,28 +88,72 @@ header {
    border-radius: 1%;
    font-size: small;
 }
+input[type="submit"] {
+   border: none;
+   background: transparent;
+   margin: 0;
+   padding: 7px 8px;
+   font-size: 14px;
+   color: inherit;
+   border: 1px solid transparent;
+   border-radius: inherit;
+ }
+ 
+ input[type="submit"]::placeholder {
+   color: #bbb;
+ }
+ input[type="submit"] {
+   text-indent: -999px;
+   overflow: hidden;
+   width: 40px;
+   padding: 0;
+   margin: 0;
+   border: 1px solid transparent;
+   border-radius: inherit;
+   background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+   cursor: pointer;
+   opacity: 0.7;
+ }
+ 
+ input[type="submit"]:hover {
+   opacity: 1;
+ }
+
+ 
 main {
    background-color: white; 
    color: #333;
    flex: 1 1 auto ;
-   width: 58.67%;
+   width: 53.67%;
    min-height: 35rem;
-   max-height: 50rem;
-   padding: 5rem 1rem;
-   border: 0.1px solid grey;
+   max-height: 100rem;
+   padding-top: 5rem;
 } 
-aside { 
+.right-aside { 
    color: #222;
    background-color: white; 
    flex: 0 0 auto;
-   width:31.67%;
+   width:25.67%;
+   font-size: large;
+   flex-direction: column;
+   padding-top: 5rem;
+   padding-right: 1rem;
+}
+.right-aside a {
+   color: rgb(81, 79, 79);
+   font-size: small;
+}
+.left-aside{
+   background-color: white; 
+   flex: 0 0 auto;
+   width:10%;
    font-size: smaller;
    flex-direction: column;
-   padding: 5rem 1rem;
+   border: 0.1px solid #e3dfbf;
 }
 footer {
    background-color: rgb(32, 30, 30); 
-   flex: 1 0 100%;
+   flex: 1 0 95%;
    min-height: 10rem;
    padding: 1rem;
 }
@@ -133,7 +180,7 @@ footer {
    border-radius:5%
 }
 .box:hover {
-   color:red;
+   color:rgb(177, 39, 39);
    font-size: xx-large;
    background-color: #6b06b8;
 }
@@ -141,7 +188,7 @@ footer {
    font-size: x-small;
 }
 .hot-date {
-   font-size: x-small;
+   font-size: 8px;
 }
 .hot-item{
    display: flex; 
@@ -153,18 +200,21 @@ footer {
 .aside-item{
    border-radius: 1%;
    border: 0.1px solid #e3dfbf;
-   background-color: #fffad5;
+   background-color: #f9f4ea;
    margin-bottom: 1rem;
 }
+.aside-item h2 {
+   font-size: large;
+}
 .hot-dislike i {
-   color: red;
+   color: rgb(176, 108, 108);
 }
 .hot-like i {
    color: #026c34;
 }
 aside h2{
    text-align: center;
-   color:red;
+   color:rgb(177, 39, 39);
 }
 .hot-emotion{
    font-size: xx-small;
@@ -177,10 +227,13 @@ aside h2{
    min-height: auto;
    line-height: 40rem;
 }
+*/
 .post_detail{
-   display: flex;
-   flex-direction: column;
-} */
+   font-size: 15px;
+   width: 100%;
+   margin-left: 2rem;
+   margin-right: 1rem;
+} 
 .post-info {
    display: flex;
    flex-flow: row wrap;
@@ -200,7 +253,7 @@ aside h2{
    color:#12c064;
 }
 .dislike-icon:hover{
-   color: red;
+   color: rgb(177, 39, 39);
 }
 #button-like{
    display: inline-flex;
@@ -244,7 +297,7 @@ code.language-python {
 }
 .footer{
    display: flex;
-   min-width: 90%;
+   min-width: 100%;
    flex-flow: row wrap;
    justify-content: space-between;
 }
@@ -254,7 +307,6 @@ code.language-python {
 .footer-item{
    display: flex;
    flex-flow: column wrap;
-   max-width: 400px;
    color: rgb(185, 181, 181);
    font-size: small;
 }
@@ -273,15 +325,15 @@ code.language-python {
    font-family: "Avenir Next", sans-serif;
    font-weight: 900;
    font-size: 30px;
-   background-image: linear-gradient(red, white, rgb(32, 30, 30));
+   background-image: linear-gradient(rgb(177, 39, 39), white, rgb(32, 30, 30));
    text-transform: uppercase;
-   color:#03602f;
+   color:#1292c0;
    font-style: italic;
    letter-spacing: 0.05em;
    display: inline-block;
  }
  .check-me:hover{
-   color:red;
+   color:rgb(177, 39, 39);
  }
  .tag{
    font-size: x-small;
@@ -292,6 +344,8 @@ code.language-python {
 }
 .post-lists{
    width:100%;
+   margin-left: 2rem;
+   margin-right: 1rem;
 }
 .post-item {
    background-color: rgb(251, 251, 251);
@@ -300,11 +354,12 @@ code.language-python {
    padding-left:5px;
    padding-bottom: 0.2rem;
    padding-top: 0.2rem;
-   font-size: x-small;
+   font-size: small;
 }
 .pagination {
-   position: absolute;
+   position: relative;
    bottom: -20px;
    left: 340px;
    font-size: small;
+   margin-bottom: 5rem;
 }

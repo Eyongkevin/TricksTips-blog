@@ -16,7 +16,6 @@
   </head>
   <body>
     {% csrf_token %}
-    <div id="content">
       <div class="container">
         <header class="item main-header">
           <div class="item-head">
@@ -36,17 +35,29 @@
             </span>
           </div>
           <div class="item-search">
-            <form method="get">
+            <form method="get" class="nosubmit">
               {{form.as_table }}
-              <input type="submit" value="Search">
+              <input class="nosubmit" type="submit" value="Search">
            </form>
           </div>
         </header>
+        <aside class="item left-aside"></aside>
         {% block content %} {% endblock %}
+        <aside class="item right-aside">
+          {% block related_post %}{% endblock related_post %}
+          <div class="aside-item">
+            <h2>Hot <span class="trickstips">Ticks&Tips</span></h2>
+            <hr />
+            {% for hot_post in hot_posts %}
+                {% include "includes/hot_posts.html" with post=hot_post %}
+            {% empty%}
+            <div class="no-hot-posts">No Hot Posts</div>
+            {% endfor %}
+          </div>
+        </aside>
         <footer class="item">
           {% include 'includes/footer.html' with cats=cats %}
         </footer>
       </div>
-    </div>
   </body>
 </html>
