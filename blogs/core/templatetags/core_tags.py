@@ -2,6 +2,7 @@ from datetime import datetime
 from django import template
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from django.apps import apps
 
 register = template.Library()
 
@@ -9,6 +10,8 @@ register = template.Library()
 DAYS_PER_YEAR = 365
 DAYS_PER_MONTH = 30
 DAYS_PER_WEEK = 7
+
+""" FILTERS """
 
 
 @register.filter(is_safe=True)
@@ -48,3 +51,89 @@ def date_since(specific_date):
 
     else:
         return f"{specific_date: %B %d, %Y}"
+
+
+""" TAGS """
+
+
+class ObjectsNode(template.Node):
+    def __init__(self, model, manager_method, limit, var_name):
+        self.model = model
+        self.manager_method = manager_method
+        self.limit = template.Variable(limit) if limit else None
+        self.var_name = var_name
+
+    def render(self, context):
+        if "." in self.manager_method:
+            manager, method = self.manager_method.split(".")
+        else:
+            manager = "_default_manager"
+            method = self.manager_method
+
+        model_manager = getattr(self.model, manager)
+        fallback_method = self.model._default_manager.none
+        qs = getattr(model_manager, method, fallback_method)()
+        limit = None
+        if self.limit:
+            try:
+                limit = self.limit.resolve(context)
+            except template.VariableDoesNotExist:
+                limit = None
+        context[self.var_name] = qs[:limit] if limit else qs
+        return ""
+
+
+@register.tag
+def load_objects(parser, token):
+    """Gets a queryset of objects of the model specified by app and model name
+
+    Usage:
+        {% load_objects [<manager.]<method>
+                        from <app_name>.<model_name>
+                        [limit <amount>]
+                        as <var_name>
+        %}
+    Examples:
+        {% load_objects latest_published from people.Person limit 3 as people %}
+        {% load_objects objects.all from news.Article as article %}
+        {% load_objects my_objects.all from news.Article limit 5 as article %}
+    """
+    limit_count = None
+    try:
+        (
+            tag_name,
+            manager_method,
+            str_from,
+            app_model,
+            str_limit,
+            limit_count,
+            str_as,
+            var_name,
+        ) = token.split_contents()
+    except ValueError:
+        try:
+            (
+                tag_name,
+                manager_method,
+                str_from,
+                app_model,
+                str_as,
+                var_name,
+            ) = token.split_contents()
+        except ValueError:
+            tag_name = token.contents.split()[0]
+            raise template.TemplateSyntaxError(
+                f"{tag_name} tag requires the following syntax: "
+                f"{{% {tag_name} [<manager>.]<method> from "
+                "<app_name>.<model_name> [limit <amount>] "
+                "as <var_name> %}"
+            )
+    try:
+        app_name, model_name = app_model.split(".")
+    except ValueError:
+        raise template.TemplateSyntaxError(
+            "load_objects tag requires application name "
+            "and model name, separated by a dot"
+        )
+    model = apps.get_model(app_name, model_name)
+    return ObjectsNode(model, manager_method, limit_count, var_name)

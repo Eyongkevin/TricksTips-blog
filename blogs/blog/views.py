@@ -11,15 +11,11 @@ from .form import SearchForm
 
 @redirect_if_search
 def index_view(request, **kwargs):
-    # get all categories
-    all_cats = Category.objects.all()
-    # get at least 10 hot posts(with highest likes)
-    hot_posts = Like.like.most_liked_posts()
     form = SearchForm()
     return render(
         request,
         "blog/index.html",
-        {"cats": all_cats, "hot_posts": hot_posts, "form": form},
+        {"form": form},
     )
 
 
@@ -27,14 +23,12 @@ def index_view(request, **kwargs):
 def post_list(request, **kwargs):
     """get all posts by cat."""
 
-    all_cats = Category.objects.all()
     form = SearchForm()
     cat_slug = kwargs.get("cat_slug")
 
     object_list = Post.post.published().order_by(
         "-likes__like_count", "-published_date"
     )
-    hot_posts = Like.like.most_liked_posts()
 
     cat = None
     if cat_slug and cat_slug != "search":
@@ -52,8 +46,6 @@ def post_list(request, **kwargs):
         {
             "posts": posts,
             "cat": cat,
-            "cats": all_cats,
-            "hot_posts": hot_posts,
             "form": form,
         },
     )
@@ -66,7 +58,6 @@ def post_detail(request, **kwargs):
     month = kwargs.get("month")
     day = kwargs.get("day")
     post = kwargs.get("post")
-    all_cats = Category.objects.all()
     form = SearchForm()
     post = get_object_or_404(
         Post,
@@ -85,16 +76,13 @@ def post_detail(request, **kwargs):
         .exclude(id=post.id)
         .order_by("likes__like_count")[:5]
     )
-    hot_posts = Like.like.most_liked_posts()
     return render(
         request,
         "blog/post_detail.html",
         {
             "post": post,
             "cat": cat,
-            "cats": all_cats,
             "related_posts": related_posts,
-            "hot_posts": hot_posts,
             "form": form,
         },
     )
