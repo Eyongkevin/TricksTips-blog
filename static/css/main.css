@@ -328,15 +328,20 @@ code.language-python {
    font-family: "Avenir Next", sans-serif;
    font-weight: 900;
    font-size: 30px;
+   width: 70%;
    background-image: linear-gradient(rgb(177, 39, 39), white, rgb(32, 30, 30));
    text-transform: uppercase;
-   color:#1292c0;
+   color:rgb(32, 30, 30);
    font-style: italic;
    letter-spacing: 0.05em;
    display: inline-block;
+   text-align: center;
  }
- .check-me:hover{
-   color:rgb(177, 39, 39);
+ .media-icon:hover{
+   color:#1292c0;
+ }
+ .media-icon {
+   color: whitesmoke; 
  }
  .tag{
    font-size: x-small;
@@ -366,6 +371,34 @@ code.language-python {
    font-size: small;
    margin-bottom: 5rem;
 }
+.footer-media{
+   display: inline-grid;
+   width: 70%;
+   grid-gap: 20px;
+   grid-template-rows: 50px 50px;
+   grid-template-columns:50px 50px;
+   grid-auto-rows: 50px;
+   grid-auto-columns: 50px;
+   grid-auto-flow: column;
+
+}
+.linkedin {
+   grid-row: 1;
+   grid-column: 2;
+}
+.github {
+   grid-row: 1;
+   grid-column: 3
+}
+.stackoverflow {
+   grid-row: 1;
+   grid-column: 4
+}
+.medium {
+   grid-row: 1;
+   grid-column: 5
+}
+
 @media screen and (max-width: 990px) {
    main {
       color: #333;
@@ -412,7 +445,6 @@ code.language-python {
    }
 
 }
-
 @media screen and (max-width: 790px) {
    main {
       color: #333;
@@ -456,7 +488,6 @@ code.language-python {
    }
 
 }
-
 @media screen and (max-width: 700px) {
    main {
       color: #333;
