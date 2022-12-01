@@ -4,32 +4,31 @@
 
 <!---->
 {% block content %}
-<main class="item main-content">
-  <div class="post_detail">
-    <h2 class="detail-title">{{ post.title }}</h2>
-    <div class="post-info">
-      <span class="date">
-        <span class="info-title">Published</span>
-        {{ post.published_date|date_since}} by {{ post.author }}
-      </span>
-      , {% include "includes/tags.html" with tags=post.tags %},
-      <!---->
-      {% include "includes/like_dislike.html" with post=post %}
+<div class="post-detail">
+  <h2 class="detail-title">{{ post.title }}</h2>
+  <div class="post-info">
+    <span class="date">
+      <span class="info-title">Published</span>
+      {{ post.published_date|date_since}} by {{ post.author }}
+    </span>
+    , {% include "includes/tags.html" with tags=post.tags %},
+    <!---->
+    {% include "includes/like_dislike.html" with post=post %}
+  </div>
+  <hr />
+  <div class="detail-body">{{post.body|safe}}</div>
+  <div class="feedback">
+    <span class="feedback-text">Did you find this helpful?</span>
+    <div id="button-like" class="like-icon">
+      <i class="fa fa-thumbs-up fa-2x"></i>
     </div>
-    <hr />
-    <div class="detail-body">{{post.body|safe|linebreaks}}</div>
-    <div class="feedback">
-      <span class="feedback-text">Did you find this helpful?</span>
-      <div id="button-like" class="like-icon">
-        <i class="fa fa-thumbs-up fa-2x"></i>
-      </div>
-      <span>&nbsp</span>
-      <div id="button-dislike" class="dislike-icon">
-        <i class="fa fa-thumbs-down fa-2x"></i>
-      </div>
+    <span>&nbsp</span>
+    <div id="button-dislike" class="dislike-icon">
+      <i class="fa fa-thumbs-down fa-2x"></i>
     </div>
   </div>
-</main>
+</div>
+
 {% endblock %} {% block related_post %}
 <div class="aside-item">
   <h2>Related Ticks&Tips</h2>

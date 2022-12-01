@@ -126,7 +126,7 @@ main {
    flex: 1 1 auto ;
    width: 53.67%;
    min-height: 35rem;
-   max-height: 100rem;
+   max-height: 700rem;
    padding-top: 5rem;
 } 
 .right-aside { 
@@ -150,6 +150,11 @@ main {
    font-size: smaller;
    flex-direction: column;
    border: 0.1px solid #e3dfbf;
+}
+.post-list-body {
+   background-color: red;
+   min-height: auto;
+   max-height: 400px;
 }
 footer {
    display: flex;
@@ -229,7 +234,8 @@ aside h2{
    line-height: 40rem;
 }
 */
-.post_detail{
+.post-detail{
+   display: block;
    font-size: 15px;
    width: 100%;
    margin-left: 2rem;
@@ -237,6 +243,7 @@ aside h2{
 } 
 .post-info {
    display: flex;
+   flex: 1 1 auto;
    flex-flow: row wrap;
    font-size: x-small;
 }

@@ -47,7 +47,9 @@
           </div>
         </header>
         <aside class="item left-aside"></aside>
-        {% block content %} {% endblock %}
+        <main class="item main-content">
+          {% block content %} {% endblock %}
+        </main>
         <aside class="item right-aside">
           {% block related_post %}{% endblock related_post %}
           <div class="aside-item">
