@@ -15,4 +15,4 @@ Tricks&Tips is currently on development. The stacks used are
 ## Demo
 
 This is how Tricks&Tips currently looks like;
-!['demo video'](docs/img/demo.gif)
+!['demo video'](docs/img/demo2.gif)
