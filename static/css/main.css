@@ -325,6 +325,9 @@ code.language-python {
 .footer-3{
    margin-left: 200px;
 }
+.footer-1 p {
+   line-height: 0.5;
+}
 .footer-item ul{
    display: inline-flex;
    flex-flow: column wrap;
@@ -596,5 +599,25 @@ code.language-python {
    }
    .footer-2{
       width: 100%;
+   }
+   pre code {
+      display: block;
+      margin: 0 0 0 60px;
+      padding: 15px 16px 14px;
+      border-left: 1px solid #555;
+      overflow-x: auto;
+      font-size: 8px;
+      line-height: 19px;
+      color: #ddd;
+   }
+}
+@media screen and (max-width: 400px) {
+   .box{
+      display: flex;
+      flex-flow: row wrap;
+      flex: 1 0 15%;
+      max-height: 15rem;
+      min-width: 41%;
+      max-width: 41%;
    }
 }
