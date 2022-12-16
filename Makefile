@@ -2,7 +2,7 @@ dev:
 	python manage.py runserver --settings=config.settings.dev
 
 prod:
-	python manage.py runserver --settings=config.settings.prod
+	python manage.py runserver --insecure --settings=config.settings.prod
 
 dev-shell:
 	python manage.py shell --settings=config.settings.dev
