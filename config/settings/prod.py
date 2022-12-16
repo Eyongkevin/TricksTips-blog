@@ -14,6 +14,15 @@ DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS: list[str] = ["*"]
 
+# -- Redirect all HTTP calls to HTTPS
+# SECURE_SSL_REDIRECT = True
+
+# -- Instructs the browser to only send cookies over https connection.
+# SESSION_COOKIE_SECURE = True
+
+# -- Enable csrf protection to reject any post coming from http connection.
+# CSRF_COOKIE_SECURE = True
+
 
 DATABASES = {
     "default": {
