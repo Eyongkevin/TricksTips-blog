@@ -4,7 +4,7 @@ import mimetypes
 from .base import *
 
 mimetypes.add_type("text/css", ".css", True)
-env = environ.Env(DEBUG=(bool, True))
+env = environ.Env(DEBUG=(bool, False))
 
 environ.Env.read_env(os.path.join(BASE_DIR, ".env.prod"))
 
