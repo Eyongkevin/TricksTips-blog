@@ -1,12 +1,10 @@
 {% load static %}
-{% load unicorn %}
 {% load core_tags %} 
 {% load_objects all from category.Category as cats %}
 {% load_objects like.most_liked_posts from like.Like as hot_posts %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% unicorn_scripts %}
     <meta charset ="utf-8" />
     <title>{% block title %}{% endblock%}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />

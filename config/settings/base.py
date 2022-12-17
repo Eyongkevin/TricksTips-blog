@@ -27,7 +27,6 @@ THIRD_PARTY_APPS = [
     # add third-party apps here
     "rangefilter",
     "taggit",
-    "django_unicorn",
     "django_ckeditor_5",
 ]
 

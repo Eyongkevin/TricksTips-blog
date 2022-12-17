@@ -23,6 +23,7 @@ ALLOWED_HOSTS: list[str] = ["*"]
 # -- Enable csrf protection to reject any post coming from http connection.
 # CSRF_COOKIE_SECURE = True
 
+MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
 
 DATABASES = {
     "default": {
@@ -34,3 +35,23 @@ DATABASES = {
         "PORT": "5432",
     }
 }
+
+# Content Security Policy
+CSP_DEFAULT_SRC = ["'self'"]
+CSP_STYLE_SRC = [
+    "'self'",
+    "http://fonts.googleapis.com/css?family=Muli",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+]
+CSP_SCRIPT_SRC = [
+    "'self'",
+    "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js",
+]
+CSP_FONT_SRC = [
+    "'self'",
+    "http://fonts.gstatic.com",
+    "https://cdnjs.cloudflare.com",
+]
+CSP_IMG_SRC = ["*"]
+CSP_MEDIA_SRC = ["*"]
+CSP_FRAME_SRC = ["*"]
