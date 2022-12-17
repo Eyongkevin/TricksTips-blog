@@ -38,10 +38,7 @@
             </span>
           </div>
           <div class="item-search">
-            <form method="get" class="nosubmit">
-              {{form.as_table }}
-              <input class="nosubmit" type="submit" value="Search">
-           </form>
+            {% include 'includes/search.html' %}
           </div>
         </header>
         <aside class="item left-aside"></aside>
