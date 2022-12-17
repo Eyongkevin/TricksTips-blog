@@ -339,6 +339,10 @@ code.language-python {
 .footer-item ul li{
    margin: 10px 3px;
  }
+ .issue-report {
+   font-size:10px;
+   color:rgb(245, 134, 134);
+ }
 .check-me {
    font-family: "Avenir Next", sans-serif;
    font-weight: 900;
@@ -390,9 +394,9 @@ code.language-python {
    display: inline-grid;
    width: 100%;
    grid-gap: 20px;
-   grid-template-rows: 50px 50px;
+   grid-template-rows: 10px 10px;
    grid-template-columns:50px 50px;
-   grid-auto-rows: 50px;
+   grid-auto-rows: 10px;
    grid-auto-columns: 50px;
    grid-auto-flow: column;
 
