@@ -30,3 +30,6 @@ dev-makemigration:
 
 prod-makemigration:
 	python manage.py makemigrations $(m) --settings=config.settings.prod
+
+prod-check:
+	python manage.py check --deploy --settings=config.settings.prod
