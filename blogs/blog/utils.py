@@ -4,7 +4,7 @@ from django.db.models.functions import Greatest
 from django.shortcuts import redirect
 from django.urls import reverse
 from blogs.blog.form import SearchForm
-from functools import wraps
+from functools import wraps, lru_cache
 
 
 def get_minimized_text(text, length=30):
@@ -13,6 +13,7 @@ def get_minimized_text(text, length=30):
     return text[:length] + "..."
 
 
+@lru_cache(maxsize=100, typed=True)
 def pagination(request, object_list, page_limit=10):
     paginator = Paginator(object_list, page_limit)
     page = request.GET.get("page")
@@ -25,6 +26,7 @@ def pagination(request, object_list, page_limit=10):
     return results
 
 
+@lru_cache(maxsize=100, typed=True)
 def full_text_search(request, obj):
     q = request.GET.get("query")
     if q:
