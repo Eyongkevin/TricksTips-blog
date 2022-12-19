@@ -36,7 +36,7 @@ def full_text_search(request, obj):
             obj = (
                 obj.annotate(
                     similarity=Greatest(
-                        TrigramSimilarity("title", query),
+                        TrigramSimilarity("title__unaccent", query),
                         TrigramSimilarity("body", query),
                     )
                 )
@@ -59,3 +59,6 @@ def redirect_if_search(func):
             return func(request, **kwargs)
 
     return wrapper
+
+
+# éscapè'
