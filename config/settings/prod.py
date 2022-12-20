@@ -15,7 +15,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS: list[str] = ["*"]
+ALLOWED_HOSTS: list[str] = ["mtt.local", "127.0.0.1"]
 
 # -- Redirect all HTTP calls to HTTPS
 # SECURE_SSL_REDIRECT = True
@@ -38,6 +38,10 @@ DATABASES = {
         "PORT": "5432",
     }
 }
+
+STATIC_ROOT = (
+    "/usr/local/var/www/mtt/staticfiles"  # str(BASE_DIR.joinpath("staticfiles"))
+)
 
 # Content Security Policy
 CSP_DEFAULT_SRC = ["'self'"]
