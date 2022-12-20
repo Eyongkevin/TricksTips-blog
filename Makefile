@@ -33,3 +33,6 @@ prod-makemigration:
 
 prod-check:
 	python manage.py check --deploy --settings=config.settings.prod
+
+dev-g:
+	sudo gunicorn --env DJANGO_SETTINGS_MODULE=config.settings.prod -c config/gunicorn/dev.py
