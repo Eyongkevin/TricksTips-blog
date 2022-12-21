@@ -16,6 +16,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS: list[str] = ["web-production-b4c7.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://web-production-b4c7.up.railway.app"]
 
 # -- Redirect all HTTP calls to HTTPS
 # SECURE_SSL_REDIRECT = True
