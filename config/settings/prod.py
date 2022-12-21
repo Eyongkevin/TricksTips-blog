@@ -28,16 +28,16 @@ ALLOWED_HOSTS: list[str] = ["mtt.local", "127.0.0.1"]
 
 MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": env.str("DB_NAME"),  # database name
-        "USER": env.str("DB_USER"),  # database user
-        "PASSWORD": env.str("DB_PWD"),  # database password
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": env.str("DB_NAME"),  # database name
+#         "USER": env.str("DB_USER"),  # database user
+#         "PASSWORD": env.str("DB_PWD"),  # database password
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     }
+# }
 
 STATIC_ROOT = (
     "/usr/local/var/www/mtt/staticfiles"  # str(BASE_DIR.joinpath("staticfiles"))
@@ -62,3 +62,11 @@ CSP_FONT_SRC = [
 CSP_IMG_SRC = ["*"]
 CSP_MEDIA_SRC = ["*"]
 CSP_FRAME_SRC = ["*"]
+
+import dj_database_url
+
+DATABASE_URL = env.str("DATABASE_URL")
+
+DATABASES = {
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+}
