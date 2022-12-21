@@ -3,7 +3,7 @@ import environ
 import mimetypes
 from .base import *
 
-ADMINS = ("Eyong Kevin Enowanyo", "tonyparkerkenz@gmail.com")
+ADMINS = (("Eyong Kevin Enowanyo", "tonyparkerkenz@gmail.com"),)
 
 
 mimetypes.add_type("text/css", ".css", True)
