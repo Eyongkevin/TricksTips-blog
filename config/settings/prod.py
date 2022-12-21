@@ -26,7 +26,10 @@ ALLOWED_HOSTS: list[str] = ["mtt.local", "127.0.0.1"]
 # -- Enable csrf protection to reject any post coming from http connection.
 # CSRF_COOKIE_SECURE = True
 
-MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
+MIDDLEWARE += [
+    "csp.middleware.CSPMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+]
 
 # DATABASES = {
 #     "default": {
@@ -39,9 +42,10 @@ MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
 #     }
 # }
 
-STATIC_ROOT = (
-    "/usr/local/var/www/mtt/staticfiles"  # str(BASE_DIR.joinpath("staticfiles"))
-)
+# STATIC_ROOT = (
+#     "/usr/local/var/www/mtt/staticfiles"  # str(BASE_DIR.joinpath("staticfiles"))
+# )
+STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
 
 # Content Security Policy
 CSP_DEFAULT_SRC = ["'self'"]
