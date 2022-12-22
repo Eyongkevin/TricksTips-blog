@@ -25,6 +25,9 @@ dev-migrate:
 prod-migrate:
 	python manage.py migrate --settings=config.settings.prod
 
+prod-local-migrate:
+	python manage.py migrate --settings=config.settings.prod_local
+
 dev-makemigration:
 	python manage.py makemigrations $(m) --settings=config.settings.dev
 
@@ -36,6 +39,9 @@ prod-check:
 
 dev-g:
 	sudo gunicorn --env DJANGO_SETTINGS_MODULE=config.settings.prod_local -c config/prod/gunicorn/dev.py
+
+cs-g:
+	python manage.py collectstatic --settings=config.settings.prod_local
 
 cs:
 	python manage.py collectstatic --settings=config.settings.prod
