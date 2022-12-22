@@ -17,8 +17,7 @@ DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS: list[str] = [
     "web-production-b4c7.up.railway.app",
-    "https://www.mytricksntips.com",
-    "https://mytricksntips.com",
+    ".mytricksntips.com",
 ]
 CSRF_TRUSTED_ORIGINS = ["https://web-production-b4c7.up.railway.app"]
 
