@@ -253,12 +253,145 @@ customColorPalette = [
 #     },
 # }
 
+# CKEDITOR_5_CONFIGS = {
+#     "default": {
+#         "skin": "office2013",
+#         "toolbar": [
+#             "heading",
+#             "|",
+#             "italic",
+#             "link",
+#             "bulletedList",
+#             "numberedList",
+#             "blockQuote",
+#             "imageUpload",
+#         ],
+#     },
+#     "extends": {
+#         "blockToolbar": [
+#             "paragraph",
+#             "heading1",
+#             "heading2",
+#             "heading3",
+#             "|",
+#             "bulletedList",
+#             "numberedList",
+#             "|",
+#             "blockQuote",
+#         ],
+#         "toolbar": [
+#             "heading",
+#             "|",
+#             "outdent",
+#             "indent",
+#             "|",
+#             "linespace",
+#             "bold",
+#             "italic",
+#             "link",
+#             "underline",
+#             "strikethrough",
+#             "code",
+#             "subscript",
+#             "superscript",
+#             "highlight",
+#             "|",
+#             "codeBlock",
+#             "sourceEditing",
+#             "insertImage",
+#             "bulletedList",
+#             "numberedList",
+#             "todoList",
+#             "|",
+#             "blockQuote",
+#             "imageUpload",
+#             "|",
+#             "fontSize",
+#             "fontFamily",
+#             "fontColor",
+#             "fontBackgroundColor",
+#             "mediaEmbed",
+#             "removeFormat",
+#             "insertTable",
+#         ],
+#         "image": {
+#             "toolbar": [
+#                 "imageTextAlternative",
+#                 "|",
+#                 "imageStyle:alignLeft",
+#                 "imageStyle:alignRight",
+#                 "imageStyle:alignCenter",
+#                 "imageStyle:side",
+#                 "|",
+#             ],
+#             "styles": [
+#                 "full",
+#                 "side",
+#                 "alignLeft",
+#                 "alignRight",
+#                 "alignCenter",
+#             ],
+#         },
+#         "table": {
+#             "contentToolbar": [
+#                 "tableColumn",
+#                 "tableRow",
+#                 "mergeTableCells",
+#                 "tableProperties",
+#                 "tableCellProperties",
+#             ],
+#             "tableProperties": {
+#                 "borderColors": customColorPalette,
+#                 "backgroundColors": customColorPalette,
+#             },
+#             "tableCellProperties": {
+#                 "borderColors": customColorPalette,
+#                 "backgroundColors": customColorPalette,
+#             },
+#         },
+#         "heading": {
+#             "options": [
+#                 {
+#                     "model": "paragraph",
+#                     "title": "Paragraph",
+#                     "class": "ck-heading_paragraph",
+#                 },
+#                 {
+#                     "model": "heading1",
+#                     "view": "h1",
+#                     "title": "Heading 1",
+#                     "class": "ck-heading_heading1",
+#                 },
+#                 {
+#                     "model": "heading2",
+#                     "view": "h2",
+#                     "title": "Heading 2",
+#                     "class": "ck-heading_heading2",
+#                 },
+#                 {
+#                     "model": "heading3",
+#                     "view": "h3",
+#                     "title": "Heading 3",
+#                     "class": "ck-heading_heading3",
+#                 },
+#             ]
+#         },
+#     },
+#     #     "list": {
+#     #         "properties": {
+#     #             "styles": "true",
+#     #             "startIndex": "true",
+#     #             "reversed": "true",
+#     #         }
+#     #     },
+# }
+
 CKEDITOR_5_CONFIGS = {
     "default": {
-        "skin": "moono",
         "toolbar": [
             "heading",
             "|",
+            "bold",
             "italic",
             "link",
             "bulletedList",
@@ -267,7 +400,21 @@ CKEDITOR_5_CONFIGS = {
             "imageUpload",
         ],
     },
+    "comment": {
+        "language": {"ui": "en", "content": "en"},
+        "toolbar": [
+            "heading",
+            "|",
+            "bold",
+            "italic",
+            "link",
+            "bulletedList",
+            "numberedList",
+            "blockQuote",
+        ],
+    },
     "extends": {
+        "language": "en",
         "blockToolbar": [
             "paragraph",
             "heading1",
@@ -281,11 +428,11 @@ CKEDITOR_5_CONFIGS = {
         ],
         "toolbar": [
             "heading",
+            "codeBlock",
             "|",
             "outdent",
             "indent",
             "|",
-            "linespace",
             "bold",
             "italic",
             "link",
@@ -296,15 +443,12 @@ CKEDITOR_5_CONFIGS = {
             "superscript",
             "highlight",
             "|",
-            "codeBlock",
-            "sourceEditing",
-            "insertImage",
             "bulletedList",
             "numberedList",
             "todoList",
             "|",
             "blockQuote",
-            "imageUpload",
+            "insertImage",
             "|",
             "fontSize",
             "fontFamily",
@@ -313,6 +457,7 @@ CKEDITOR_5_CONFIGS = {
             "mediaEmbed",
             "removeFormat",
             "insertTable",
+            "sourceEditing",
         ],
         "image": {
             "toolbar": [
@@ -322,6 +467,8 @@ CKEDITOR_5_CONFIGS = {
                 "imageStyle:alignRight",
                 "imageStyle:alignCenter",
                 "imageStyle:side",
+                "|",
+                "toggleImageCaption",
                 "|",
             ],
             "styles": [
@@ -376,12 +523,17 @@ CKEDITOR_5_CONFIGS = {
                 },
             ]
         },
+        "list": {
+            "properties": {
+                "styles": True,
+                "startIndex": True,
+                "reversed": True,
+            }
+        },
+        "htmlSupport": {
+            "allow": [
+                {"name": "/.*/", "attributes": True, "classes": True, "styles": True}
+            ]
+        },
     },
-    #     "list": {
-    #         "properties": {
-    #             "styles": "true",
-    #             "startIndex": "true",
-    #             "reversed": "true",
-    #         }
-    #     },
 }

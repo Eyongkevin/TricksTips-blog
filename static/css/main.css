@@ -46,9 +46,10 @@ ol {
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.logo {
+.mtt-logo {
    width: 20%;
    height: 60%;
+   display: inline-block;
 }
 header {
    display: flex;
@@ -70,6 +71,7 @@ header {
    border-bottom: 0.1px solid grey;
    
 }
+
 .item-head-tree {
    font-size: small;
 }
@@ -286,7 +288,7 @@ aside h2{
    
 }
 pre {
-   background: #333;
+   background: #333 !important;
    white-space: pre;
    word-wrap: break-word;
    overflow: auto;
@@ -470,6 +472,10 @@ code.language-python {
 
 }
 @media screen and (max-width: 790px) {
+   .mtt-logo {
+      width: 10%;
+      height: 50%;
+   }
    main {
       color: #333;
       flex: 1 1 auto ;
@@ -513,7 +519,7 @@ code.language-python {
 
 }
 @media screen and (max-width: 700px) {
-   .logo {
+   .mtt-logo {
       width: 10%;
       height: 50%;
    }

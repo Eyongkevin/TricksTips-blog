@@ -23,15 +23,19 @@
       integrity="sha384-fj9YEHKNa/e0CNquG4NcocjoyMATYo1k2Ff5wGB42C/9AwOlJjDoySPtNJalccfI" 
       crossorigin="anonymous"></script>
     <script src="{% static "js/main.js" %}"></script>
+    <link href="{% static 'django_ckeditor_5/dist/styles.css' %}" type="text/css" media="all" rel="stylesheet">
+    <script src="{% static 'django_ckeditor_5/dist/bundle.js' %}"></script>
   </head>
   <body>
     {% csrf_token %}
       <div class="container">
         <header class="item main-header">
           <div class="item-head">
-            <a href="/"><img class="logo" src="{% static 'image/logo.png' %}" alt='logo' /> <span class="item-head-text">Tricks&Tips</span></a>
+            <a href="/"><img class="mtt-logo" src="{% static 'image/logo.png' %}" alt='logo' /> <span class="item-head-text">Tricks&Tips</span></a>
+          </div>
+          <div class="item-head tree">
             <span class="item-head-tree">
-              {% if cat %}>
+              {% if cat %}
                 {% if post %}
                   <a href= {% url 'blogs:post_cat_view' cat.slug %}>
                     {{ cat.slug }}
