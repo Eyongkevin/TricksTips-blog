@@ -19,7 +19,10 @@ ALLOWED_HOSTS: list[str] = [
     "web-production-b4c7.up.railway.app",
     ".mytricksntips.com",
 ]
-CSRF_TRUSTED_ORIGINS = ["https://web-production-b4c7.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://web-production-b4c7.up.railway.app",
+    "https://www.mytricksntips.com",
+]
 
 # -- Redirect all HTTP calls to HTTPS
 # SECURE_SSL_REDIRECT = True
