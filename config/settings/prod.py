@@ -24,6 +24,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://www.mytricksntips.com",
 ]
 
+INSTALLED_APPS += ["whitenoise.runserver_nostatic"]
 # -- Redirect all HTTP calls to HTTPS
 # SECURE_SSL_REDIRECT = True
 
@@ -34,9 +35,9 @@ CSRF_TRUSTED_ORIGINS = [
 # CSRF_COOKIE_SECURE = True
 
 MIDDLEWARE += [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "csp.middleware.CSPMiddleware",
 ]
-
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.postgresql_psycopg2",
@@ -54,6 +55,7 @@ MIDDLEWARE += [
 STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (str(BASE_DIR.joinpath("static")),)
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Content Security Policy
 CSP_DEFAULT_SRC = ["'self'"]
