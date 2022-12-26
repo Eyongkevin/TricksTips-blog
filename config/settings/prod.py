@@ -32,6 +32,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 # -- Enable csrf protection to reject any post coming from http connection.
 # CSRF_COOKIE_SECURE = True
+INSTALLED_APPS += ["whitenoise.runserver_nostatic"]
 
 MIDDLEWARE += [
     "csp.middleware.CSPMiddleware",
@@ -53,6 +54,7 @@ MIDDLEWARE += [
 #     "/usr/local/var/www/mtt/staticfiles"  # str(BASE_DIR.joinpath("staticfiles"))
 # )
 STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Content Security Policy
 CSP_DEFAULT_SRC = ["'self'"]
