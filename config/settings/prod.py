@@ -16,15 +16,15 @@ SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS: list[str] = [
-    # "web-production-b4c7.up.railway.app",
+    "web-production-b4c7.up.railway.app",
     ".mytricksntips.com",
 ]
 CSRF_TRUSTED_ORIGINS = [
-    # "https://web-production-b4c7.up.railway.app",
+    "https://web-production-b4c7.up.railway.app",
     "https://www.mytricksntips.com",
 ]
 
-INSTALLED_APPS += ["whitenoise.runserver_nostatic"]
+# INSTALLED_APPS += ["whitenoise.runserver_nostatic"]
 # -- Redirect all HTTP calls to HTTPS
 # SECURE_SSL_REDIRECT = True
 
@@ -55,7 +55,7 @@ MIDDLEWARE += [
 STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (str(BASE_DIR.joinpath("static")),)
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Content Security Policy
 CSP_DEFAULT_SRC = ["'self'"]
