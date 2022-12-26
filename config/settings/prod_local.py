@@ -6,6 +6,7 @@ ALLOWED_HOSTS: list[str] = [
 ]
 CSRF_TRUSTED_ORIGINS = ["http://mtt.local.com"]
 
+INSTALLED_APPS += ["whitenoise.runserver_nostatic"]
 
 DATABASES = {
     "default": {
@@ -18,6 +19,11 @@ DATABASES = {
     }
 }
 
+MIDDLEWARE += [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+]
+
 STATIC_ROOT = (
     "/usr/local/var/www/mtt/staticfiles"  # str(BASE_DIR.joinpath("staticfiles"))
 )
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

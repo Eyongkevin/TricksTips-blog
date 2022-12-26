@@ -16,11 +16,11 @@ SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS: list[str] = [
-    "web-production-b4c7.up.railway.app",
+    # "web-production-b4c7.up.railway.app",
     ".mytricksntips.com",
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://web-production-b4c7.up.railway.app",
+    # "https://web-production-b4c7.up.railway.app",
     "https://www.mytricksntips.com",
 ]
 
@@ -32,11 +32,9 @@ CSRF_TRUSTED_ORIGINS = [
 
 # -- Enable csrf protection to reject any post coming from http connection.
 # CSRF_COOKIE_SECURE = True
-INSTALLED_APPS += ["whitenoise.runserver_nostatic"]
 
 MIDDLEWARE += [
     "csp.middleware.CSPMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 # DATABASES = {
@@ -54,7 +52,8 @@ MIDDLEWARE += [
 #     "/usr/local/var/www/mtt/staticfiles"  # str(BASE_DIR.joinpath("staticfiles"))
 # )
 STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (str(BASE_DIR.joinpath("static")),)
 
 # Content Security Policy
 CSP_DEFAULT_SRC = ["'self'"]
