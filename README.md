@@ -76,7 +76,13 @@ make sure to create the directory `/var/log/nginx/` for nginx logs and `/usr/loc
 - Start nginx `sudo brew services start nginx` or `sudo nginx`
 - Run the django project `make dev-g`
 
-## Demo
+### How to contribute
 
-This is how Tricks&Tips currently looks like when you access http://localhost.com;
-!['demo video'](docs/img/demo2.gif)
+[MyTricksnTips](https://www.mytricksntips.com/) is an [open source](https://opensource.com/resources/what-open-source) project. I am open to suggestions and willing to extend it to a different level. Anyone willing to contribute is highly welcomed.
+To contribute, go ahead and:
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :blush:
