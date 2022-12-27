@@ -200,13 +200,13 @@ footer {
 .box{
    background-color: #34005b;
    display: flex;
-   flex-flow: row wrap;
+   flex-flow: column wrap;
    flex: 1 0 20%;
    max-height: 15rem;
    min-width: 30%;
    max-width: 30%;
    align-items: center;
-   justify-content: center;
+   /* justify-content: center; */
    font-size: x-large;
    color:#00a74f;
    margin-left: 1rem;
@@ -217,6 +217,16 @@ footer {
    color: white;
    font-size: xx-large;
    background-color: #6b06b8;
+}
+.post-count {
+   width: 100%;
+   height: 40%;
+   font-size: small;
+   color:rgb(195, 191, 191);
+   margin-left: 1.5%;
+}
+.cat-name {
+   height: 60%;
 }
 .date{
    font-size: x-small;
@@ -394,7 +404,7 @@ code.language-python {
 }
 .post-lists{
    width:100%;
-   margin-left: 2rem;
+   margin-left: 1rem;
    margin-right: 1rem;
 }
 .post-item {
@@ -475,7 +485,7 @@ code.language-python {
    .box{
       background-color: #34005b;
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
       flex: 1 0 15%;
       max-height: 15rem;
       min-width: 20%;
@@ -601,6 +611,9 @@ code.language-python {
       margin-bottom: 1rem;
       border-radius:5%
    }
+   .post-count {
+      font-size: x-small;
+   }
    .item-search{
       width: 100%;
       /* padding-right: 240px; */
@@ -670,5 +683,8 @@ code.language-python {
       max-height: 15rem;
       min-width: 41%;
       max-width: 41%;
+   }
+   .post-count {
+      font-size: xx-small;
    }
 }

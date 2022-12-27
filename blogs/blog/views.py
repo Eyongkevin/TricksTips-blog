@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-
+from django.db.models import Count
 from .models import Post
 from blogs.like.models import Like
 from blogs.category.models import Category
@@ -11,11 +11,16 @@ from .form import SearchForm
 
 @redirect_if_search
 def index_view(request, **kwargs):
+    cat_with_post_cnt = (
+        Category.objects.prefetch_related("category_posts")
+        .annotate(post_count=Count("category_posts"))
+        .values("post_count", "name", "slug")
+    )
     form = SearchForm()
     return render(
         request,
         "blog/index.html",
-        {"form": form},
+        {"form": form, "cat_post_cnt": cat_with_post_cnt},
     )
 
 
