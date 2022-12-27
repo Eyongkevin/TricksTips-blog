@@ -1,4 +1,4 @@
-!['logo'](docs/img/bannar.png)
+!['logo'](docs/img/bannar2.png)
 
 [MyTricksnTips](https://www.mytricksntips.com/) provides you with useful Tricks and Tips to help you up-to-date with the latest technologies. All Tricks and Tips are simple, easy-to-follow and practical.
 
