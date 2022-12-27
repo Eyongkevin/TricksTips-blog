@@ -35,11 +35,9 @@
     {% csrf_token %}
       <div class="container">
         <header class="item main-header">
-          <div class="item-head">
+          <div class="item-head logo-title">
             <a href="/"><img class="mtt-logo" src="{% static 'image/logo.png' %}" alt='logo' /><span class="item-head-text"><span class="item-head-text-y">y</span>TricksnTips</span></a>
-          </div>
-          <div class="item-head tree">
-            <span class="item-head-tree">
+            <div class="item-head-tree">
               {% if cat %}
                 {% if post %}
                   <a href= {% url 'blogs:post_cat_view' cat.slug %}>
@@ -51,7 +49,7 @@
               {% endif %} {% if post %}>
               <span>{{post.slug}}</span>
               {% endif %}
-            </span>
+                </div>
           </div>
           <div class="item-search">
             {% include 'includes/search.html' %}
