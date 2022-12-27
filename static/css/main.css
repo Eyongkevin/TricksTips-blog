@@ -47,13 +47,12 @@ ol {
 }
 
 .mtt-logo {
-   width: 8%;
+   width: 30%;
    height: 60%;
    display: inline-block;
 }
 header {
    display: flex;
-   flex: 1 1 1 auto;
    background-color: #105b63; 
    max-height: 1.62rem;
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -67,20 +66,27 @@ header {
 .main-header{
    display: flex;
    flex-flow: row wrap;
+   justify-content: space-evenly;
    max-width: 100%;
    background-color: white;
    border-bottom: 0.1px solid grey;
    
 }
-.item-head {
-   max-width: 100%;
-   min-width: 50%;
-}
 
-.item-head-tree {
-   font-size: small;
-   display: inline-block;
+.logo-title {
+   display: flex;
+   flex: 0 0 160px;
 }
+.item-head-tree {
+   display: flex;
+   flex: 1 1 40px;
+   align-items: flex-end;
+   font-size: x-small;
+   text-overflow: clip;
+   margin-right: auto;
+   height: 30px;
+
+} 
 .item-head-text {
    font-size: large;
    color: rgb(49, 48, 48);
@@ -91,8 +97,9 @@ header {
    font-weight: bold;
 }
 .item-search{
-   margin-left: auto;
-   width: 35.50%;
+   /* margin-left: auto; */
+   width: 35.50%; 
+
    /* padding-right: 240px; */
 }
 /* .item-search form {
@@ -296,9 +303,6 @@ aside h2{
    padding:0.7rem;
    color:gray
 }
-.detail-title{
-   
-}
 pre {
    background: #333 !important;
    white-space: pre;
@@ -484,10 +488,10 @@ code.language-python {
 
 }
 @media screen and (max-width: 790px) {
-   .mtt-logo {
+   /* .mtt-logo {
       width: 10%;
       height: 50%;
-   }
+   } */
    main {
       color: #333;
       flex: 1 1 auto ;
@@ -532,9 +536,16 @@ code.language-python {
 }
 @media screen and (max-width: 700px) {
    .mtt-logo {
-      width: 8%;
-      height: 50%;
+      width: 20%;
+      height: 60%;
    }
+   .logo-title {
+      display: flex;
+      align-items: flex-end;
+      flex: 0 0 125px;
+
+   }
+
    main {
       color: #333;
       flex: 1 1 auto ;

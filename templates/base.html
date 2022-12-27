@@ -37,21 +37,21 @@
         <header class="item main-header">
           <div class="item-head logo-title">
             <a href="/"><img class="mtt-logo" src="{% static 'image/logo.png' %}" alt='logo' /><span class="item-head-text"><span class="item-head-text-y">y</span>TricksnTips</span></a>
-            <div class="item-head-tree">
-              {% if cat %}
-                {% if post %}
-                  <a href= {% url 'blogs:post_cat_view' cat.slug %}>
-                    {{ cat.slug }}
-                  </a>
-                {% else %}
-                  <span>{{cat.slug}}</span>
-                {% endif %}
-              {% endif %} {% if post %}>
-              <span>{{post.slug}}</span>
-              {% endif %}
-                </div>
           </div>
-          <div class="item-search">
+          <div class="item-head item-head-tree">
+            {% if cat %}>
+              {% if post %}
+                <a href= {% url 'blogs:post_cat_view' cat.slug %}>
+                  {{ cat.slug }}
+                </a>
+              {% else %}
+                <span>{{cat.slug}}</span>
+              {% endif %}
+            {% endif %} {% if post %}>
+            <span>{{post.slug}}</span>
+            {% endif %}
+          </div>
+          <div class="item-head item-search">
             {% include 'includes/search.html' %}
           </div>
         </header>
