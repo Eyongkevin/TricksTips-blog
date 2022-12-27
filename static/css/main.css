@@ -77,6 +77,12 @@ header {
 }
 .item-head-text {
    font-size: large;
+   color: rgb(49, 48, 48);
+   font-family: 'Glacial Indifference', sans-serif;
+   font-weight:lighter;
+}
+.item-head-text-y {
+   font-weight: bold;
 }
 .item-search{
    margin-left: auto;
@@ -600,6 +606,9 @@ code.language-python {
    }
    .item-head-text {
       font-size: large;
+   }
+   .item-head-text-y {
+      font-size:x-small;
    }
    .search-input{
       width: 70%;

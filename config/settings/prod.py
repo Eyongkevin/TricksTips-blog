@@ -63,6 +63,7 @@ CSP_STYLE_SRC = [
     "'self'",
     "http://fonts.googleapis.com/css?family=Muli",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+    "https://fonts.cdnfonts.com/css/glacial-indifference-2",
 ]
 CSP_SCRIPT_SRC = [
     "'self'",
@@ -72,6 +73,9 @@ CSP_FONT_SRC = [
     "'self'",
     "http://fonts.gstatic.com",
     "https://cdnjs.cloudflare.com",
+    "https://fonts.cdnfonts.com/css/glacial-indifference-2",
+    "https://fonts.cdnfonts.com/s/31913/GlacialIndifference-Regular.woff",
+    "https://fonts.cdnfonts.com/s/31913/GlacialIndifference-Bold.woff",
 ]
 CSP_IMG_SRC = ["*"]
 CSP_MEDIA_SRC = ["*"]

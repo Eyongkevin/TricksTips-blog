@@ -17,6 +17,11 @@
       integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
       crossorigin="anonymous"
     />
+    <link 
+      rel="stylesheet" 
+      href="https://fonts.cdnfonts.com/css/glacial-indifference-2" 
+      integrity="sha384-iLEPH5Fj61cj0YH2d9obRVOJ/Yf9Hvm4HcrqUSN0y5PAbfaOpDbk2QgfXxoVjKK2" 
+      crossorigin="anonymous">
     <script 
       type='text/javascript' 
       src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
@@ -31,7 +36,7 @@
       <div class="container">
         <header class="item main-header">
           <div class="item-head">
-            <a href="/"><img class="mtt-logo" src="{% static 'image/logo.png' %}" alt='logo' /> <span class="item-head-text">Tricks&Tips</span></a>
+            <a href="/"><img class="mtt-logo" src="{% static 'image/logo.png' %}" alt='logo' /><span class="item-head-text"><span class="item-head-text-y">y</span>TricksnTips</span></a>
           </div>
           <div class="item-head tree">
             <span class="item-head-tree">
@@ -59,7 +64,7 @@
         <aside class="item right-aside">
           {% block related_post %}{% endblock related_post %}
           <div class="aside-item">
-            <h2>Hot <span class="trickstips">Ticks&Tips</span></h2>
+            <h2>Hot <span class="trickstips">TicksnTips</span></h2>
             <hr />
             {% for hot_post in hot_posts %}
                 {% include "includes/hot_posts.html" with post=hot_post %}
