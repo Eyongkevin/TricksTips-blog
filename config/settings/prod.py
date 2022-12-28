@@ -26,13 +26,13 @@ CSRF_TRUSTED_ORIGINS = [
 
 # INSTALLED_APPS += ["whitenoise.runserver_nostatic"]
 # -- Redirect all HTTP calls to HTTPS
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 
 # -- Instructs the browser to only send cookies over https connection.
-# SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 # -- Enable csrf protection to reject any post coming from http connection.
-# CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 MIDDLEWARE += [
     "whitenoise.middleware.WhiteNoiseMiddleware",

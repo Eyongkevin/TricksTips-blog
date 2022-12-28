@@ -6,6 +6,14 @@ ALLOWED_HOSTS: list[str] = [
 ]
 CSRF_TRUSTED_ORIGINS = ["http://mtt.local.com"]
 
+# -- Redirect all HTTP calls to HTTPS
+SECURE_SSL_REDIRECT = False
+
+# -- Instructs the browser to only send cookies over https connection.
+SESSION_COOKIE_SECURE = False
+
+# -- Enable csrf protection to reject any post coming from http connection.
+CSRF_COOKIE_SECURE = False
 
 DATABASES = {
     "default": {
