@@ -29,7 +29,7 @@ CSRF_TRUSTED_ORIGINS = [
 SECURE_SSL_REDIRECT = True
 
 # -- Instructs the browser to only send cookies over https connection.
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
 
 # -- Enable csrf protection to reject any post coming from http connection.
 CSRF_COOKIE_SECURE = True
