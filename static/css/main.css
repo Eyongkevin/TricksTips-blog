@@ -215,7 +215,7 @@ footer {
 }
 .box:hover {
    color: white;
-   font-size: xx-large;
+   font-size: 100%;
    background-color: #6b06b8;
 }
 .post-count {
