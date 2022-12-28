@@ -32,7 +32,7 @@ SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = False
 
 # -- Enable csrf protection to reject any post coming from http connection.
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
 
 MIDDLEWARE += [
     "whitenoise.middleware.WhiteNoiseMiddleware",
