@@ -159,9 +159,9 @@ input[type="submit"] {
 .hide-show-search {
    display: none;
 }
-.search-input-btn {
+/* .search-input-btn {
    display: inline-block;
-}
+} */
 main {
    background-color: white; 
    color: #333;
