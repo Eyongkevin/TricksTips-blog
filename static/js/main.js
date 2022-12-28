@@ -7,5 +7,14 @@ $(function() {
       $('#button-like').removeClass('like-icon');
       $('#button-dislike').removeClass('dislike-icon');
    });
+
+   const search = document.querySelector('.item-search');
+   const btn = document.querySelector('.search-btn');
+   // const input = document.querySelector('.input');
+
+   btn.addEventListener('click', () => {
+      search.classList.toggle('active');
+      // input.focus()
+   });
    
 });

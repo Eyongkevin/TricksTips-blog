@@ -51,7 +51,10 @@
             <span>{{post.slug}}</span>
             {% endif %}
           </div>
-          <div class="item-head item-search">
+          <div class="item-head hide-show-search">
+            <input class="search-btn" type="submit" value="Search" />
+          </div>
+          <div class="item-head item-search active">
             {% include 'includes/search.html' %}
           </div>
         </header>
