@@ -358,6 +358,29 @@ code.language-python {
 .footer-3{
    margin-left: 200px;
 }
+.footer-4 {
+   display: flex;
+   width: 100%;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-bottom: 2rem;
+}
+.footer-5 {
+   color: rgb(117, 114, 114);
+   text-align: center;
+   width: 100%;
+   margin-bottom: 2rem;
+   font-size: small;
+}
+.footer-right {
+   width: 35%;
+   text-align: center;
+   border-top: 0.1px solid grey;
+   margin-top: 2rem;
+}
+.fa-heart {
+   color: red;
+}
 .footer-1 p {
    line-height: 0.5;
 }
@@ -673,6 +696,12 @@ code.language-python {
       font-size: 8px;
       line-height: 19px;
       color: #ddd;
+   }
+   .footer-5 {
+      font-size: xx-small;
+   }
+   .footer-right{
+      width: 10%;
    }
 }
 @media screen and (max-width: 400px) {
