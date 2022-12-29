@@ -10,11 +10,11 @@ $(function() {
 
    const search = document.querySelector('.item-search');
    const btn = document.querySelector('.search-btn');
-   // const input = document.querySelector('.input');
+   const input = document.querySelector('.search-input');
 
    btn.addEventListener('click', () => {
       search.classList.toggle('active');
-      // input.focus()
+      input.focus();
    });
    
 });
