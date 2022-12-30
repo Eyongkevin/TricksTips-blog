@@ -44,7 +44,7 @@
                 <span>{{cat.slug}}</span>
               {% endif %}
             {% endif %} {% if post %}>
-            <span>{{post.slug}}</span>
+            <span>{{post.slug|truncatechars:46}}</span>
             {% endif %}
           </div>
           <div class="item-head hide-show-search">
