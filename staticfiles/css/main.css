@@ -727,6 +727,9 @@ code.language-python {
       line-height: 19px;
       color: #ddd;
    }
+   .code-toolbar{
+      font-size: 8px;
+   }
    .footer-5 {
       font-size: xx-small;
    }
