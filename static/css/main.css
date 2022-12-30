@@ -63,7 +63,11 @@ header {
    min-width: 100%;
    position: fixed;
    padding: 1rem;
+   z-index: 1;
 } 
+.code-toolbar{
+   z-index: 0;
+}
 .main-header{
    display: flex;
    flex-flow: row wrap;
