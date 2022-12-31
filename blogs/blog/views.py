@@ -79,7 +79,8 @@ def post_detail(request, **kwargs):
             tags__slug__in=tag_slugs,
         )
         .exclude(id=post.id)
-        .order_by("likes__like_count")[:5]
+        .order_by("likes__like_count")
+        .distinct()[:5]
     )
     return render(
         request,
