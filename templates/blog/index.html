@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 <!---->
 {% block title %}yTricksnTips{% endblock title %}
 
@@ -8,8 +9,47 @@
     <div class="boxes">
       {% for cat in cat_post_cnt %} 
       <a class="box" href= {% url 'blogs:post_cat_view' cat.slug %}>
+            <div class="box-top">
+              <span class="box-top-menu"></span>
+            </div>
+            <div class="box-middle">
+              <div class="box-middle-left">
+                <div class="box-middle-inner-up"></div>
+                <div class="box-middle-inner-down"></div>
+              </div>
+              <div class="box-middle-center">
+                <img class="box-logo" src="{% static "image/"%}{{ cat.slug }}.png" alt='logo' />
+              </div>
+              <div class="box-middle-right">
+                <div class="box-middle-inner-up"></div>
+                <div class="box-middle-inner-down"></div>
+              </div>
+            </div>
+            <div class="box-down"><span class="cat-name">{{ cat.name }}</span></div>
+            <div class="box-bottom">
+              <div class="box-bottom-section section-post">
+                <div class="section-post-title">Posts</div>
+                <div class="section-post-value">{{ cat.post_count }}</div>
+              </div>
+              <div class="box-bottom-section section-likes">
+                <div class="section-post-title">likes</div>
+                <div class="section-post-value">0</div>
+              </div>
+              <!--
+              <div class="box-bottom-section section-comments">
+                <div class="section-post-title">comments</div>
+                <div class="section-post-value">234k</div>
+              </div>
+              -->
+              <div class="box-bottom-section section-today">
+                <div class="section-post-title">today</div>
+                <div class="section-post-value">0</div>
+              </div>
+            </div>
+            <!--
             <div class="post-count">{{cat.post_count }} post{{cat.post_count|pluralize }}</div>
             <div class="cat-name">{{ cat.name }}</div>
+            -->
       </a>
       {% empty %}
       <div class="no-posts">No Posts</div>

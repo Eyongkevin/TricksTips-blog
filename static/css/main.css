@@ -218,35 +218,115 @@ footer {
    height: 100%;
 }
 .box{
-   background-color: #34005b;
+   /*background-color: #34005b; */
+   background-color: skyblue;
    display: flex;
    flex-flow: column wrap;
    flex: 1 0 20%;
-   max-height: 15rem;
+   max-height: 20rem;
    min-width: 30%;
    max-width: 30%;
    align-items: center;
    /* justify-content: center; */
-   font-size: x-large;
-   color:#00a74f;
+   font-size: small;
+   /* color:#00a74f; */
+   color: black;
    margin-left: 1rem;
    margin-bottom: 1rem;
-   border-radius:5%
+   border-radius:5%;
 }
 .box:hover {
-   color: white;
    font-size: 100%;
-   background-color: #6b06b8;
 }
 .post-count {
    width: 100%;
    height: 40%;
    font-size: small;
-   color:rgb(195, 191, 191);
+   color:rgb(0, 0, 0);
    margin-left: 1.5%;
 }
 .cat-name {
    height: 60%;
+}
+.box-top {
+   display: flex;
+   background-color: rgb(199, 239, 255);  /* rgb(247, 247, 247); */
+   width: 100%;
+   flex-flow: row wrap;
+   min-height: 1.5rem;
+}
+.box-top-menu {
+   margin-left: auto;
+}
+.box-middle {
+   display: flex;
+   flex-flow: row wrap;
+   background-color: white;
+   width: 100%;
+   min-height: fit-content;
+}
+.box-middle-center{
+   display: flex;
+   width: 40%;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   
+}
+.box-logo {
+   width: 95px;
+   height: 95px;
+   border-radius: 50%;   
+}
+.box-middle-left{
+   display: flex;
+   flex-flow: row wrap;
+   background-color: rgb(247, 247, 247);
+   width: 30%;
+   
+}
+.box-middle-right{
+   display: flex;
+   flex-flow: row wrap;
+   background-color: rgb(247, 247, 247);
+   width: 30%;
+}
+.box-middle-inner-up{
+   height: 80%;
+   width: 100%;
+   border: 0.1px solid #e3dfbf;
+}
+.box-middle-inner-down{
+   height: 20%;
+   width: 100%;
+   background-color: white;
+}
+.box-down{
+   display: flex;
+   background-color: white;
+   width: 100%;
+   min-height: 2rem;
+   align-items: center;
+   justify-content: center;
+}
+.box-bottom {
+   display: flex;
+   flex-flow: row wrap;
+   background-color: rgb(247, 247, 247);
+   width: 100%;
+   min-height: 3rem;
+   justify-content: space-between;
+}
+.box-bottom-section{
+   display: flex;
+   flex-flow: column wrap;
+   justify-content: space-between;
+   align-items: center;
+   margin: 1rem;
+   font-size: xx-small;
+}
+.section-post-value{
+   color: grey;
 }
 .date{
    font-size: x-small;
@@ -526,21 +606,29 @@ code.language-python {
       height: 100%;
    }
    .box{
-      background-color: #34005b;
+      background-color: skyblue;
       display: flex;
       flex-flow: column wrap;
       flex: 1 0 15%;
       max-height: 15rem;
-      min-width: 20%;
-      max-width: 20%;
+      min-width: 40%;
+      max-width: 40%;
       align-items: center;
       justify-content: center;
       font-size: small;
-      color:#00a74f;
+      color:black;
       margin-left: 1rem;
       margin-bottom: 1rem;
       border-radius:5%
    }
+   .box-logo {
+      width: 50px;
+      height: 50px;  
+   }
+   .box-bottom-section{
+      font-size: 7px;
+   }
+   
    .footer-3{
       width: 100%;
       margin-left: 0px;
@@ -576,7 +664,7 @@ code.language-python {
       height: 100%;
    }
    .box{
-      background-color: #34005b;
+      background-color: skyblue;
       display: flex;
       flex-flow: row wrap;
       flex: 1 0 15%;
@@ -586,7 +674,7 @@ code.language-python {
       align-items: center;
       justify-content: center;
       font-size: small;
-      color:#00a74f;
+      color:black;
       margin-left: 1rem;
       margin-bottom: 1rem;
       border-radius:5%
@@ -648,7 +736,7 @@ code.language-python {
       margin-right: 0rem;
    }
    .box{
-      background-color: #34005b;
+      background-color: skyblue;
       display: flex;
       flex-flow: row wrap;
       flex: 1 0 15%;
@@ -658,12 +746,13 @@ code.language-python {
       align-items: center;
       justify-content: center;
       font-size: small;
-      color:#00a74f;
+      color:black;
       margin-left: 1rem;
       margin-right: 1rem;
       margin-bottom: 1rem;
       border-radius:5%
    }
+   
    .post-count {
       font-size: x-small;
    }
