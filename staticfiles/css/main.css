@@ -424,12 +424,7 @@ pre code {
    line-height: 19px;
    color: #ddd;
 }
-/* code.language-javascript {
-   color: #ffa726;
-}
-code.language-python {
-   color: #4dd0e1;
-} */
+
 .footer{
    display: flex;
    flex: 1 1 auto;
