@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load model_funcs %} {% load core_tags %}
+{% extends "base.html" %}
+<!---->
+{% load model_funcs %}
 <!---->
 {% block title %}yTricksnTips{% endblock %}
 
@@ -13,18 +15,10 @@
       </a>
       <br />
     </h3>
-    <div class="post-info">
-      <span class="date">
-        <span class="info-title">Published</span>
-        {{ post.published_date|date_since}} by {{ post.author}}
-      </span>
-      , {% include "includes/tags.html" with tags=post.tags %},
-      <!---->
-      {% include "includes/like_dislike.html" with post=post %}
-    </div>
+    {% include "includes/post_info.html" with post=post %}
     <!--<p>Tags: {{ post.tags.all|join:', '}}</p> -->
     <div class="post-list-body">
-      {{ post.body|safe|truncatewords_html:30|linebreaks}}
+      {{ post.body|safe|truncatewords_html:15|linebreaks}}
     </div>
   </div>
   {% endfor %}

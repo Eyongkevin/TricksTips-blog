@@ -4,10 +4,7 @@
     {{ post.title}}
   </a>
   <div class="hot-date">
-    <span class="info-title">Published</span>
-    {{ post.published_date|date_since}} by {{ post.author }},
-    <!---->
-    {% include "includes/tags.html" with tags=post.tags %}
+    {% include "includes/post_info.html" with post=post %}
   </div>
   <div class="hot-emotion">
     <span class="hot-like"

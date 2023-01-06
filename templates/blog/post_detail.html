@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load static %} {% load core_tags %}
+{% extends "base.html" %}
+<!---->
+{% load static %}
 <!---->
 {% block title %}yTricksnTips{% endblock%}
 
@@ -6,15 +8,7 @@
 {% block content %}
 <div class="post-detail">
   <h2 class="detail-title">{{ post.title }}</h2>
-  <div class="post-info">
-    <span class="date">
-      <span class="info-title">Published</span>
-      {{ post.published_date|date_since}} by {{ post.author }}
-    </span>
-    , {% include "includes/tags.html" with tags=post.tags %},
-    <!---->
-    {% include "includes/like_dislike.html" with post=post %}
-  </div>
+  {% include "includes/post_info.html" with post=post %}
   <hr />
   <div class="detail-body">{{post.body|safe}}</div>
   <div class="feedback">

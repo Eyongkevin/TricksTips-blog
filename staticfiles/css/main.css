@@ -20,12 +20,6 @@ hr {
 
 h1, h2, h3, h4, h5 , h6 { font-family: 'Muli', sans-serif; font-weight:normal; }
 
-/* h1 {
-    border-bottom:1px solid #bbb;
-    padding:0 0 10px 0;
-    margin:10px 0 20px 0;
-} */
-
 h2 {
     margin:20px 0 10px;
 }
@@ -102,14 +96,9 @@ header {
    font-weight: bold;
 }
 .item-search{
-   /* margin-left: auto; */
    width: 35.50%; 
-   /* padding-right: 240px; */
 }
-/* .item-search form {
-   color: #555;
-   border-radius: 5px;
-} */
+
 .search-input{
    width: 77%;
    height: 30px;
@@ -163,9 +152,7 @@ input[type="submit"] {
 .hide-show-search {
    display: none;
 }
-/* .search-input-btn {
-   display: inline-block;
-} */
+
 main {
    background-color: white; 
    color: #333;
@@ -200,6 +187,7 @@ main {
 .post-list-body {
    min-height: auto;
    max-height: 400px;
+   margin-top: -8px;
 }
 footer {
    display: flex;
@@ -218,7 +206,6 @@ footer {
    height: 100%;
 }
 .box{
-   /*background-color: #34005b; */
    background-color: skyblue;
    display: flex;
    flex-flow: column wrap;
@@ -227,9 +214,7 @@ footer {
    min-width: 30%;
    max-width: 30%;
    align-items: center;
-   /* justify-content: center; */
    font-size: small;
-   /* color:#00a74f; */
    color: black;
    margin-left: 1rem;
    margin-bottom: 1rem;
@@ -329,10 +314,10 @@ footer {
    color: grey;
 }
 .date{
-   font-size: x-small;
+   
 }
 .hot-date {
-   font-size: 8px;
+   /*font-size: 1px !important; */
 }
 .hot-item{
    display: flex; 
@@ -361,17 +346,11 @@ aside h2{
    color:rgb(177, 39, 39);
 }
 .hot-emotion{
-   font-size: xx-small;
+   font-size: 8px;
    color: #bbb;
    margin-left: 2px;
 }
-/* .detail-body{
-   display: flex;
-   flex-flow: column wrap;
-   min-height: auto;
-   line-height: 40rem;
-}
-*/
+
 .post-detail{
    display: block;
    font-size: 15px;
@@ -381,9 +360,22 @@ aside h2{
 } 
 .post-info {
    display: flex;
+   flex-flow: column wrap;
+   font-size: 8px;
+}
+.post-info-up {
+   display: flex;
    flex: 1 1 auto;
    flex-flow: row wrap;
-   font-size: x-small;
+}
+.post-info-down{
+   display: flex;
+   flex-flow: row wrap;
+}
+.read-time {
+   margin-left: 5px;
+   background-color: #b6e3f3;
+   padding: 1px 1px 1px;
 }
 .feedback{
    display: flex;
@@ -519,7 +511,7 @@ code.language-python {
    color: whitesmoke; 
  }
  .tag{
-   font-size: x-small;
+   font-size: 8px;
    margin-left: 2px;
 }
 .info-title{

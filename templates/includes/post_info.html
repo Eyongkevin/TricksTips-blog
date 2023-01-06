@@ -1,0 +1,23 @@
+{% load core_tags %}{% load post_utils %}
+
+<div class="post-info">
+  <div class="post-info-up">
+    <span class="date">
+      <span class="info-title"> Published </span>
+      {{ post.published_date|date_since}} by {{ post.author}}
+    </span>
+    <!---->
+    ,{% include "includes/like_dislike.html" with post=post %}
+    <div class="read-time">
+      <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+      {{ post.body|read}}
+    </div>
+  </div>
+  <div class="post-info-down">
+    <div class="updated-time">
+      <span class="info-title">Last updated</span>:
+      {{post.updated_at|date_since}},
+    </div>
+    {% include "includes/tags.html" with tags=post.tags %}
+  </div>
+</div>
