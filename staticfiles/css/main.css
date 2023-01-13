@@ -206,7 +206,7 @@ footer {
    height: 100%;
 }
 .box{
-   background-color: skyblue;
+   
    display: flex;
    flex-flow: column wrap;
    flex: 1 0 20%;
@@ -420,9 +420,11 @@ pre code {
    padding: 15px 10px 14px;
    border-left: 1px solid #555;
    overflow-x: auto;
-   font-size: 13px;
    line-height: 19px;
    color: #ddd;
+}
+.code-toolbar{
+   font-size: 11px;
 }
 
 .footer{
@@ -485,19 +487,6 @@ pre code {
  .issue-report {
    font-size:10px;
    color:rgb(245, 134, 134);
- }
-.check-me {
-   font-family: "Avenir Next", sans-serif;
-   font-weight: 900;
-   font-size: 30px;
-   width: 70%;
-   background-image: linear-gradient(rgb(177, 39, 39), white, rgb(32, 30, 30));
-   text-transform: uppercase;
-   color:rgb(32, 30, 30);
-   font-style: italic;
-   letter-spacing: 0.05em;
-   display: inline-block;
-   text-align: center;
  }
  .media-icon:hover{
    color:#1292c0;
@@ -593,7 +582,6 @@ pre code {
       height: 100%;
    }
    .box{
-      background-color: skyblue;
       display: flex;
       flex-flow: column wrap;
       flex: 1 0 15%;
@@ -634,6 +622,12 @@ pre code {
       max-height: 700rem;
       padding-top: 5rem;
    }
+   .post-detail {
+      font-size: 11px;
+   }
+   .code-toolbar{
+      font-size: 9px;
+   }
    .right-aside { 
       color: #222;
       background-color: white; 
@@ -651,7 +645,6 @@ pre code {
       height: 100%;
    }
    .box{
-      background-color: skyblue;
       display: flex;
       flex-flow: row wrap;
       flex: 1 0 15%;
@@ -690,6 +683,12 @@ pre code {
       flex: 0 0 125px;
 
    }
+   .post-detail {
+      font-size: 15px;
+   }
+   .code-toolbar{
+      font-size: 10px;
+   }
 
    main {
       color: #333;
@@ -723,7 +722,6 @@ pre code {
       margin-right: 0rem;
    }
    .box{
-      background-color: skyblue;
       display: flex;
       flex-flow: row wrap;
       flex: 1 0 15%;
