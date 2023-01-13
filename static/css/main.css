@@ -700,7 +700,7 @@ pre code {
    }
    .right-aside { 
       color: #222;
-      background-color: whitesmoke; 
+      background-color: white; 
       flex: 1 1 auto;
       width: 100%;/*25.67%;*/
       font-size: small;
