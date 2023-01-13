@@ -486,19 +486,6 @@ pre code {
    font-size:10px;
    color:rgb(245, 134, 134);
  }
-.check-me {
-   font-family: "Avenir Next", sans-serif;
-   font-weight: 900;
-   font-size: 30px;
-   width: 70%;
-   background-image: linear-gradient(rgb(177, 39, 39), white, rgb(32, 30, 30));
-   text-transform: uppercase;
-   color:rgb(32, 30, 30);
-   font-style: italic;
-   letter-spacing: 0.05em;
-   display: inline-block;
-   text-align: center;
- }
  .media-icon:hover{
    color:#1292c0;
  }
