@@ -206,7 +206,7 @@ footer {
    height: 100%;
 }
 .box{
-   background-color: skyblue;
+   
    display: flex;
    flex-flow: column wrap;
    flex: 1 0 20%;
@@ -580,7 +580,6 @@ pre code {
       height: 100%;
    }
    .box{
-      background-color: skyblue;
       display: flex;
       flex-flow: column wrap;
       flex: 1 0 15%;
@@ -638,7 +637,6 @@ pre code {
       height: 100%;
    }
    .box{
-      background-color: skyblue;
       display: flex;
       flex-flow: row wrap;
       flex: 1 0 15%;
@@ -710,7 +708,6 @@ pre code {
       margin-right: 0rem;
    }
    .box{
-      background-color: skyblue;
       display: flex;
       flex-flow: row wrap;
       flex: 1 0 15%;
