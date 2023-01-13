@@ -335,6 +335,9 @@ footer {
 .aside-item h2 {
    font-size: large;
 }
+.no-hot-posts{
+   font-size: smaller;
+}
 .hot-dislike i {
    color: rgb(176, 108, 108);
 }
@@ -618,7 +621,7 @@ pre code {
    main {
       color: #333;
       flex: 1 1 auto ;
-      width: 32.67%;/*53.67%;*/
+      width: 34.67%;/*53.67%;*/
       min-height: 35rem;
       max-height: 700rem;
       padding-top: 5rem;
@@ -633,10 +636,13 @@ pre code {
       color: #222;
       background-color: white; 
       flex: 0 0 auto;
-      width: 36.67%;/*25.67%;*/
+      width: 34.67%;/*25.67%;*/
       flex-direction: column;
       padding-top: 5rem;
       padding-right: 1rem;
+   }
+   .hot-title{
+      font-size: x-small !important;
    }
    .boxes{
       display: flex;
