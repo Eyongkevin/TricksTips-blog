@@ -7,6 +7,8 @@ $(function() {
       $('#button-like').removeClass('like-icon');
       $('#button-dislike').removeClass('dislike-icon');
    });
+   const recentYear = document.querySelector('#recent-year');
+   recentYear.innerHTML = new Date().getFullYear();
 
    const search = document.querySelector('.item-search');
    const btn = document.querySelector('.search-btn');
