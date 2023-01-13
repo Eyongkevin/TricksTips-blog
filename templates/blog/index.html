@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static %} {% load core_tags %}
 <!---->
 {% block title %}yTricksnTips{% endblock title %}
 
@@ -29,7 +29,7 @@
             <div class="box-bottom">
               <div class="box-bottom-section section-post">
                 <div class="section-post-title">Posts</div>
-                <div class="section-post-value">{{ cat.post_count }}</div>
+                <div class="section-post-value">{{ cat.post_count|get_numerize }}</div>
               </div>
               <div class="box-bottom-section section-likes">
                 <div class="section-post-title">likes</div>

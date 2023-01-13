@@ -3,6 +3,7 @@ from django import template
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.apps import apps
+from numerize import numerize
 
 register = template.Library()
 
@@ -51,6 +52,11 @@ def date_since(specific_date):
 
     else:
         return f"{specific_date: %B %d, %Y}"
+
+
+@register.filter(is_safe=True)
+def get_numerize(numb: int) -> str:
+    return numerize.numerize(numb)
 
 
 """ TAGS """
