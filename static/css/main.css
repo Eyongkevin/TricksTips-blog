@@ -420,9 +420,11 @@ pre code {
    padding: 15px 10px 14px;
    border-left: 1px solid #555;
    overflow-x: auto;
-   font-size: 13px;
    line-height: 19px;
    color: #ddd;
+}
+.code-toolbar{
+   font-size: 11px;
 }
 
 .footer{
@@ -620,6 +622,12 @@ pre code {
       max-height: 700rem;
       padding-top: 5rem;
    }
+   .post-detail {
+      font-size: 11px;
+   }
+   .code-toolbar{
+      font-size: 9px;
+   }
    .right-aside { 
       color: #222;
       background-color: white; 
@@ -674,6 +682,12 @@ pre code {
       align-items: flex-end;
       flex: 0 0 125px;
 
+   }
+   .post-detail {
+      font-size: 15px;
+   }
+   .code-toolbar{
+      font-size: 10px;
    }
 
    main {
